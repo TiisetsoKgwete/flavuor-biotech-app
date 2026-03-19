@@ -1,4 +1,4 @@
-﻿{
+{
   "framework": "angular",
   "buildCommand": "npm run build",
   "outputDirectory": "www",
