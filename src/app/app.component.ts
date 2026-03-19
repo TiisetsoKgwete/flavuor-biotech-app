@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 @Component({
@@ -24,8 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
   isTabletNavOpen = false;
   private scrollCleanup: (() => void) | null = null;
   private routerSub?: Subscription;
-
-  constructor(private router: Router) {}
+  private readonly router = inject(Router);
 
   ngOnInit() {
     const saved = localStorage.getItem('bio-theme');

@@ -25,7 +25,7 @@
   --bio-accent-soft: #89f7bf;
   --bio-warm: #f7a928;
   --bio-text: #ecfff4;
-  --bio-muted: #b9dcca;
+  --bio-muted: #d0f0e2;
   --bio-panel: rgba(8, 24, 15, 0.76);
   --bio-border: rgba(130, 255, 190, 0.24);
   --bio-radius: 20px;
@@ -118,7 +118,7 @@ ion-content {
 }
 
 .metric-tile span {
-  color: #b7ddca;
+  color: #d2f0e5;
   font-size: 0.82rem;
 }
 
@@ -346,6 +346,7 @@ ion-menu ion-item.selected .nav-icon-bubble ion-icon {
   background: rgba(7, 24, 15, 0.62);
   border: 1px solid rgba(125, 255, 186, 0.24);
   border-radius: 18px;
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
 
@@ -571,7 +572,18 @@ ion-button.bio-ghost:active {
   }
 
   .top-links {
-    display: none;
+    flex: 1 1 0%;
+    overflow-x: auto;
+    min-width: 0;
+    flex-wrap: nowrap;
+    gap: 4px;
+    justify-content: flex-end;
+  }
+
+  .top-links a {
+    font-size: 0.73rem;
+    padding: 4px 8px;
+    flex-shrink: 0;
   }
 
   .tablet-nav-toggle,
@@ -581,18 +593,9 @@ ion-button.bio-ghost:active {
 }
 
 @media (min-width: 680px) and (max-width: 980px) {
-  .top-links {
-    display: none;
-  }
-
-  .tablet-nav-toggle {
-    display: inline-flex;
-  }
-
+  .tablet-nav-toggle,
   .tablet-links-drawer {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
+    display: none !important;
   }
 }
 
