@@ -554,6 +554,8 @@ ion-button.bio-ghost:active {
   .top-chrome {
     padding: calc(8px + var(--safe-top)) 10px 8px;
     border-radius: 14px;
+    flex-wrap: wrap;
+    row-gap: 8px;
   }
 
   .brand-copy span {
@@ -561,7 +563,7 @@ ion-button.bio-ghost:active {
   }
 
   .global-filter-row {
-    top: calc(var(--safe-top) + 50px);
+    top: calc(var(--safe-top) + 94px);
     padding: 6px;
     gap: 6px;
   }
@@ -572,18 +574,22 @@ ion-button.bio-ghost:active {
   }
 
   .top-links {
-    flex: 1 1 0%;
+    order: 3;
+    width: 100%;
     overflow-x: auto;
     min-width: 0;
     flex-wrap: nowrap;
     gap: 4px;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    touch-action: pan-x;
+    scroll-snap-type: x proximity;
   }
 
   .top-links a {
     font-size: 0.73rem;
     padding: 4px 8px;
     flex-shrink: 0;
+    scroll-snap-align: start;
   }
 
   .tablet-nav-toggle,
