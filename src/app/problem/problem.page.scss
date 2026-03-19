@@ -1,0 +1,23 @@
+.issues-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 10px;
+}
+
+.issues-grid article {
+	padding: 14px;
+	border-radius: 16px;
+	border: 1px solid rgba(255, 194, 138, 0.28);
+	background: linear-gradient(180deg, rgba(33, 19, 8, 0.44), rgba(20, 12, 6, 0.6));
+}
+
+.issues-grid h3 {
+	margin: 0 0 8px;
+	color: #fff0df;
+}
+
+.issues-grid p {
+	margin: 0;
+	color: #f5d8bc;
+	line-height: 1.58;
+}

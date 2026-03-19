@@ -1,0 +1,28 @@
+.form-wrap {
+	display: grid;
+	gap: 12px;
+}
+
+.form-wrap label {
+	display: grid;
+	gap: 6px;
+	color: #deffe9;
+	font-size: 0.85rem;
+}
+
+.form-wrap input,
+.form-wrap select,
+.form-wrap textarea {
+	width: 100%;
+	border-radius: 12px;
+	border: 1px solid rgba(126, 255, 190, 0.28);
+	background: rgba(6, 21, 14, 0.78);
+	color: #f0fff7;
+	padding: 10px 12px;
+	font-family: inherit;
+}
+
+.form-wrap input::placeholder,
+.form-wrap textarea::placeholder {
+	color: #9ac8af;
+}

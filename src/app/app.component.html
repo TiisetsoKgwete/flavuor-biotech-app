@@ -1,0 +1,65 @@
+<ion-app>
+  <ion-split-pane contentId="main-content" when="(min-width: 680px)">
+    <ion-menu contentId="main-content" type="overlay" class="app-rail-menu">
+      <ion-content>
+        <div class="rail-shell">
+          @for (p of appPages; track p.url) {
+            <ion-menu-toggle auto-hide="false">
+              <ion-item [routerLink]="[p.url]" routerDirection="root" lines="none" detail="false" routerLinkActive="selected" [title]="p.title">
+                <div class="nav-icon-bubble" slot="start">
+                  <ion-icon [name]="p.icon" aria-hidden="true"></ion-icon>
+                </div>
+                <ion-label>{{ p.short }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          }
+        </div>
+        <button class="theme-toggle-btn" type="button" (click)="toggleTheme()" [title]="isDark ? 'Switch to light mode' : 'Switch to dark mode'" aria-label="Toggle theme">
+          <div class="nav-icon-bubble theme-bubble">
+            <ion-icon [name]="isDark ? 'sunny-outline' : 'moon-outline'" aria-hidden="true"></ion-icon>
+          </div>
+        </button>
+      </ion-content>
+    </ion-menu>
+
+    <div id="main-content" class="main-frame">
+      <header class="top-chrome glass-panel">
+        <div class="brand-block">
+          <ion-menu-button></ion-menu-button>
+          <div class="brand-badge">F</div>
+          <div class="brand-copy">
+            <strong>FLAVUOR BIOTECH</strong>
+            <span>Seed to plate innovation</span>
+          </div>
+        </div>
+
+        <button class="tablet-nav-toggle" type="button" (click)="toggleTabletNav()" aria-label="Toggle section navigation" [attr.aria-expanded]="isTabletNavOpen">
+          <ion-icon [name]="isTabletNavOpen ? 'close-outline' : 'grid-outline'" aria-hidden="true"></ion-icon>
+        </button>
+
+        <nav class="top-links">
+          @for (p of appPages; track p.url) {
+            <a [routerLink]="p.url" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: p.url === '/home' }">{{ p.title }}</a>
+          }
+        </nav>
+      </header>
+
+      <nav class="tablet-links-drawer glass-panel" [class.open]="isTabletNavOpen" aria-label="Section links">
+        @for (p of appPages; track p.url) {
+          <a [routerLink]="p.url" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: p.url === '/home' }" (click)="closeTabletNav()">{{ p.title }}</a>
+        }
+      </nav>
+
+      <section class="global-filter-row glass-panel">
+        @for (filter of heroFilters; track filter) {
+          <span class="filter-chip">{{ filter }}</span>
+        }
+      </section>
+
+      <ion-router-outlet></ion-router-outlet>
+    </div>
+  </ion-split-pane>
+  <button class="scroll-to-top-btn" *ngIf="showScrollTop" (click)="scrollToTop()" aria-label="Scroll to top" title="Scroll to top">
+    <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
+  </button>
+</ion-app>

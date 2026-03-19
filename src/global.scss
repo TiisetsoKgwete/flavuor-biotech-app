@@ -1,0 +1,749 @@
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+@import "@ionic/angular/css/palettes/dark.class.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap');
+
+:root {
+  --bio-bg-0: #020d07;
+  --bio-bg-1: #07190f;
+  --bio-bg-2: #0b2919;
+  --bio-accent: #31d17e;
+  --bio-accent-soft: #89f7bf;
+  --bio-warm: #f7a928;
+  --bio-text: #ecfff4;
+  --bio-muted: #b9dcca;
+  --bio-panel: rgba(8, 24, 15, 0.76);
+  --bio-border: rgba(130, 255, 190, 0.24);
+  --bio-radius: 20px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --chrome-height: 52px;
+  --filter-offset: 56px;
+}
+
+html,
+body,
+ion-app,
+ion-content {
+  font-family: 'Sora', 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  color: var(--bio-text);
+  background:
+    radial-gradient(1000px 620px at 2% 0%, rgba(35, 150, 97, 0.24), transparent 55%),
+    radial-gradient(850px 500px at 92% 10%, rgba(255, 161, 57, 0.18), transparent 48%),
+    linear-gradient(155deg, var(--bio-bg-0) 0%, var(--bio-bg-1) 46%, var(--bio-bg-2) 100%);
+}
+
+ion-content {
+  --background: transparent;
+}
+
+.page-shell {
+  padding: 0 6px 20px;
+  display: grid;
+  gap: 14px;
+}
+
+.section-card {
+  background: var(--bio-panel);
+  border: 1px solid var(--bio-border);
+  border-radius: var(--bio-radius);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+  padding: 20px;
+}
+
+.title-kicker {
+  color: var(--bio-accent-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.display-title {
+  margin: 0;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.1rem, 5vw, 3.9rem);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  color: #f5fff8;
+}
+
+.section-title {
+  margin: 0;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.55rem, 3vw, 2.3rem);
+  color: #f6fff9;
+}
+
+.body-copy {
+  margin: 0;
+  color: var(--bio-muted);
+  line-height: 1.7;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.metric-tile {
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(139, 255, 200, 0.2);
+  background: rgba(6, 22, 14, 0.72);
+}
+
+.metric-tile strong {
+  display: block;
+  font-size: 1.38rem;
+  color: #ecfff5;
+}
+
+.metric-tile span {
+  color: #b7ddca;
+  font-size: 0.82rem;
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(128, 255, 192, 0.24);
+  background: rgba(6, 20, 13, 0.72);
+  color: #dbfce9;
+  font-size: 0.8rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+ion-button.bio-solid {
+  --background: linear-gradient(140deg, #38dc89, #229b5f);
+  --color: #042112;
+  --border-radius: 14px;
+  font-weight: 700;
+}
+
+ion-button.bio-ghost {
+  --background: transparent;
+  --border-color: rgba(133, 255, 194, 0.36);
+  --color: #e5ffef;
+  --border-radius: 14px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Light mode styles */
+html.light-mode .display-title {
+  color: #0d3a23;
+}
+
+html.light-mode .section-title {
+  color: #0d4229;
+}
+
+html.light-mode .section-card {
+  background: rgba(220, 242, 235, 0.55);
+  border-color: rgba(108, 209, 168, 0.32);
+  box-shadow: 0 8px 20px rgba(49, 150, 96, 0.14);
+}
+
+html.light-mode .metric-tile {
+  border-color: rgba(108, 209, 168, 0.28);
+  background: rgba(210, 240, 230, 0.72);
+}
+
+html.light-mode .metric-tile strong {
+  color: #0d3a23;
+}
+
+html.light-mode .metric-tile span {
+  color: #5a8070;
+}
+
+html.light-mode .pill {
+  border-color: rgba(108, 209, 168, 0.32);
+  background: rgba(200, 235, 220, 0.72);
+  color: #1a5d3d;
+}
+
+html.light-mode ion-button.bio-ghost {
+  --border-color: rgba(70, 190, 150, 0.42);
+  --color: #0d4229;
+}
+
+/* App shell rail and navigation */
+ion-split-pane {
+  --rail-width: 70px;
+  --side-width: 70px;
+  --side-max-width: 70px;
+  --side-min-width: 70px;
+  height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+ion-menu {
+  --background: transparent;
+  --width: 70px;
+  --max-width: 70px;
+  --min-width: 70px;
+}
+
+ion-split-pane.split-pane-visible > ion-menu {
+  min-width: var(--rail-width);
+  max-width: var(--rail-width);
+  width: var(--rail-width);
+}
+
+ion-split-pane.split-pane-visible > #main-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+ion-split-pane > #main-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+ion-menu ion-content {
+  --background: transparent;
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 18px;
+  --padding-bottom: 14px;
+}
+
+.rail-shell {
+  border-radius: 28px;
+  border: 1px solid rgba(111, 255, 184, 0.24);
+  background: linear-gradient(180deg, rgba(4, 28, 17, 0.88), rgba(4, 18, 12, 0.92));
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+  padding: 12px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rail-shell::before {
+  content: '';
+  position: absolute;
+  inset: -20% -30% auto auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(96, 255, 160, 0.24) 0%, rgba(96, 255, 160, 0) 65%);
+  pointer-events: none;
+}
+
+ion-menu ion-item {
+  --background: transparent;
+  --background-hover: rgba(120, 255, 178, 0.1);
+  --background-activated: rgba(120, 255, 178, 0.14);
+  --padding-start: 0;
+  --padding-end: 0;
+  --min-height: 42px;
+  margin: 6px auto;
+  width: 48px;
+  border-radius: 14px;
+}
+
+ion-menu ion-item ion-label {
+  display: none;
+}
+
+ion-menu ion-item.selected {
+  --background: rgba(88, 247, 157, 0.16);
+  border: 1px solid rgba(124, 255, 185, 0.35);
+}
+
+.nav-icon-bubble {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  border: 1px solid rgba(134, 255, 196, 0.28);
+  background: rgba(7, 29, 20, 0.72);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(49, 209, 126, 0.08);
+}
+
+.nav-icon-bubble ion-icon {
+  color: #dcffe9;
+  font-size: 1.1rem;
+  transition: color 0.25s ease;
+}
+
+ion-menu ion-item:hover .nav-icon-bubble {
+  background: rgba(14, 42, 27, 0.92);
+  border-color: rgba(124, 255, 185, 0.42);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(49, 209, 126, 0.18);
+}
+
+ion-menu ion-item.selected .nav-icon-bubble {
+  background: rgba(21, 57, 36, 0.88);
+  border-color: rgba(124, 255, 185, 0.58);
+  box-shadow: 0 0 16px rgba(49, 209, 126, 0.32);
+}
+
+ion-menu ion-item.selected .nav-icon-bubble ion-icon {
+  color: #30ff73;
+}
+
+.main-frame {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-frame ion-router-outlet {
+  flex: 1 1 0%;
+  min-height: 0;
+  position: relative;
+  display: block;
+  z-index: 1;
+}
+
+.glass-panel {
+  background: rgba(7, 24, 15, 0.62);
+  border: 1px solid rgba(125, 255, 186, 0.24);
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+}
+
+.top-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(8px + var(--safe-top)) 14px 8px;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+ion-menu-button {
+  display: none;
+  --color: #d9ffe7;
+}
+
+.brand-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #35d17f, #1c8f53);
+  color: #052a17;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-family: 'Sora', 'Segoe UI', sans-serif;
+}
+
+.brand-copy {
+  display: grid;
+}
+
+.brand-copy strong {
+  color: #f3fff8;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.brand-copy span {
+  color: rgba(212, 255, 230, 0.76);
+  font-size: 0.68rem;
+}
+
+.top-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tablet-nav-toggle {
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(132, 255, 194, 0.24);
+  background: rgba(10, 30, 20, 0.72);
+  color: #d7f8e4;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.tablet-nav-toggle:hover {
+  background: rgba(25, 58, 40, 0.82);
+  border-color: rgba(130, 255, 192, 0.5);
+}
+
+.tablet-nav-toggle:active {
+  transform: scale(0.95);
+}
+
+.tablet-nav-toggle ion-icon {
+  font-size: 1rem;
+}
+
+.top-links a {
+  color: #d7f8e4;
+  text-decoration: none;
+  font-size: 0.86rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(132, 255, 194, 0.18);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  position: relative;
+}
+
+.top-links a::after {
+  content: '';
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(126, 255, 190, 0.9);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.top-links a:hover,
+.top-links a.active {
+  background: rgba(94, 255, 169, 0.2);
+  border-color: rgba(130, 255, 192, 0.45);
+  color: #ffffff;
+}
+
+.top-links a:hover::after,
+.top-links a.active::after {
+  transform: scaleX(1);
+}
+
+.global-filter-row {
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  position: sticky;
+  top: calc(var(--safe-top) + var(--filter-offset));
+  z-index: 4;
+}
+
+.tablet-links-drawer {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: max-height 0.28s ease, opacity 0.24s ease, transform 0.24s ease;
+  padding: 0 10px;
+  pointer-events: none;
+}
+
+.tablet-links-drawer a {
+  color: #d7f8e4;
+  text-decoration: none;
+  font-size: 0.84rem;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(132, 255, 194, 0.18);
+  background: rgba(8, 24, 16, 0.65);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.tablet-links-drawer a.active,
+.tablet-links-drawer a:hover {
+  background: rgba(94, 255, 169, 0.2);
+  border-color: rgba(130, 255, 192, 0.45);
+  color: #ffffff;
+}
+
+.tablet-links-drawer a:active {
+  transform: scale(0.97);
+}
+
+.tablet-links-drawer.open {
+  max-height: 170px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 10px;
+  pointer-events: auto;
+}
+
+.top-links a:active,
+.filter-chip:active,
+.scroll-to-top-btn:active,
+ion-button.bio-solid:active,
+ion-button.bio-ghost:active {
+  transform: scale(0.97);
+}
+
+.filter-chip {
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(137, 255, 199, 0.24);
+  color: #dffde9;
+  font-size: 0.76rem;
+  background: rgba(6, 21, 14, 0.72);
+}
+
+@media (max-width: 679px) {
+  ion-split-pane {
+    --side-width: 0;
+    --side-max-width: 0;
+    --side-min-width: 0;
+  }
+
+  ion-menu-button {
+    display: block;
+  }
+
+  .top-chrome {
+    padding: calc(8px + var(--safe-top)) 10px 8px;
+    border-radius: 14px;
+  }
+
+  .brand-copy span {
+    display: none;
+  }
+
+  .global-filter-row {
+    top: calc(var(--safe-top) + 50px);
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .filter-chip {
+    font-size: 0.72rem;
+    padding: 5px 9px;
+  }
+
+  .top-links {
+    display: none;
+  }
+
+  .tablet-nav-toggle,
+  .tablet-links-drawer {
+    display: none !important;
+  }
+}
+
+@media (min-width: 680px) and (max-width: 980px) {
+  .top-links {
+    display: none;
+  }
+
+  .tablet-nav-toggle {
+    display: inline-flex;
+  }
+
+  .tablet-links-drawer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand-badge {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+  }
+
+  .brand-copy strong {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+
+  .scroll-to-top-btn {
+    right: 12px;
+    bottom: 14px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .theme-bubble {
+    animation: none !important;
+  }
+}
+
+/* Light mode shell and controls */
+html.light-mode {
+  --bio-bg-0: #f9fdfb;
+  --bio-bg-1: #f0f7f3;
+  --bio-bg-2: #e8f3ed;
+  --bio-accent: #118844;
+  --bio-accent-soft: #2aa566;
+  --bio-warm: #d4822f;
+  --bio-text: #1a3d2e;
+  --bio-muted: #5a7566;
+  --bio-panel: rgba(220, 242, 235, 0.55);
+  --bio-border: rgba(108, 209, 168, 0.32);
+}
+
+body.light-mode {
+  color: var(--bio-text);
+  background:
+    radial-gradient(1000px 620px at 2% 0%, rgba(35, 150, 97, 0.08), transparent 55%),
+    radial-gradient(850px 500px at 92% 10%, rgba(255, 161, 57, 0.06), transparent 48%),
+    linear-gradient(155deg, var(--bio-bg-0) 0%, var(--bio-bg-1) 46%, var(--bio-bg-2) 100%);
+}
+
+body.light-mode .rail-shell {
+  background: linear-gradient(180deg, rgba(240, 250, 246, 0.95), rgba(232, 245, 240, 0.92));
+  border-color: rgba(108, 209, 168, 0.35);
+  color: var(--bio-text);
+}
+
+body.light-mode .nav-icon-bubble {
+  background: rgba(200, 235, 220, 0.72);
+  border-color: rgba(108, 209, 168, 0.42);
+  box-shadow: 0 4px 12px rgba(49, 150, 96, 0.12);
+}
+
+body.light-mode .nav-icon-bubble ion-icon {
+  color: #1a5d3d;
+}
+
+body.light-mode ion-menu ion-item:hover .nav-icon-bubble {
+  background: rgba(180, 225, 210, 0.92);
+  border-color: rgba(70, 190, 150, 0.52);
+  box-shadow: 0 8px 20px rgba(49, 150, 96, 0.22);
+}
+
+body.light-mode ion-menu ion-item.selected .nav-icon-bubble {
+  background: rgba(165, 220, 200, 0.88);
+  border-color: rgba(70, 190, 150, 0.58);
+  box-shadow: 0 0 16px rgba(49, 150, 96, 0.32);
+}
+
+body.light-mode ion-menu ion-item.selected .nav-icon-bubble ion-icon {
+  color: #0d4229;
+}
+
+body.light-mode .glass-panel {
+  background: rgba(232, 248, 242, 0.58);
+  border-color: rgba(108, 209, 168, 0.28);
+}
+
+body.light-mode .brand-copy strong {
+  color: #0d3a23;
+}
+
+body.light-mode .brand-copy span {
+  color: rgba(60, 120, 90, 0.82);
+}
+
+body.light-mode .top-links a {
+  color: #2d6b4a;
+  border-color: rgba(70, 190, 150, 0.25);
+}
+
+body.light-mode .tablet-nav-toggle {
+  background: rgba(214, 239, 229, 0.86);
+  border-color: rgba(70, 190, 150, 0.35);
+  color: #1a5d3d;
+}
+
+body.light-mode .tablet-links-drawer a {
+  color: #2d6b4a;
+  border-color: rgba(70, 190, 150, 0.25);
+  background: rgba(220, 242, 235, 0.8);
+}
+
+body.light-mode .top-links a:hover,
+body.light-mode .top-links a.active {
+  background: rgba(108, 209, 168, 0.18);
+  border-color: rgba(70, 190, 150, 0.55);
+  color: #0d3a23;
+}
+
+body.light-mode .filter-chip {
+  background: rgba(210, 240, 230, 0.72);
+  border-color: rgba(108, 209, 168, 0.32);
+  color: #2d6b4a;
+}
+
+body.light-mode .theme-bubble {
+  animation-play-state: running;
+  background: rgba(255, 200, 60, 0.2);
+  border-color: rgba(255, 180, 40, 0.42);
+}
+
+body.light-mode .scroll-to-top-btn {
+  background: rgba(220, 242, 235, 0.95);
+  border-color: rgba(70, 190, 150, 0.42);
+  color: #1a5d3d;
+  box-shadow: 0 10px 28px rgba(49, 150, 96, 0.25);
+}
+
+body.light-mode .scroll-to-top-btn:hover {
+  background: rgba(200, 230, 220, 0.95);
+  border-color: rgba(70, 190, 150, 0.62);
+  box-shadow: 0 14px 36px rgba(49, 150, 96, 0.35);
+}

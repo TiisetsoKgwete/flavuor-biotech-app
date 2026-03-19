@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="false" class="page-shell">
+  <section class="section-card">
+    <p class="title-kicker">Contact</p>
+    <h1 class="display-title">Partner with us to secure the future food chain.</h1>
+    <p class="body-copy">Tell us what you are building and where you need biotech capacity, deployment support, or strategic collaboration.</p>
+  </section>
+
+  <section class="section-card form-wrap">
+    <label>
+      Full Name
+      <input type="text" placeholder="Your name" />
+    </label>
+    <label>
+      Organization
+      <input type="text" placeholder="Company, institution, or NGO" />
+    </label>
+    <label>
+      Email
+      <input type="email" placeholder="name@company.com" />
+    </label>
+    <label>
+      Focus Area
+      <select>
+        <option>Crop resilience</option>
+        <option>Alternative protein</option>
+        <option>Food waste valorization</option>
+        <option>AI-enabled agriculture</option>
+      </select>
+    </label>
+    <label>
+      Message
+      <textarea rows="5" placeholder="Project scope, timelines, and target regions"></textarea>
+    </label>
+
+    <div class="cta-row">
+      <ion-button class="bio-solid">Submit Inquiry</ion-button>
+      <ion-button fill="outline" class="bio-ghost" routerLink="/research">Review Research First</ion-button>
+    </div>
+  </section>
+</ion-content>

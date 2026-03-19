@@ -1,0 +1,7 @@
+{
+  "name": "flavuor-biotech-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
