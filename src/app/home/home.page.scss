@@ -147,6 +147,7 @@
 	background: var(--bio-panel-soft);
 	box-shadow: var(--bio-card-shadow);
 	padding: 10px;
+	overflow: hidden;
 }
 
 .widget-grid {
@@ -167,23 +168,14 @@
 	color: var(--bio-card-meta);
 }
 
-.widget-value {
-	margin: 10px 0 6px;
-	font-size: 1.45rem;
-	font-weight: 700;
-	color: var(--bio-card-title);
-}
-
-.widget-value-muted {
-	font-size: 1rem;
-	font-weight: 500;
-	color: var(--bio-card-meta);
-}
-
-.widget-meta {
-	margin: 0;
-	font-size: 0.8rem;
-	color: var(--bio-card-meta);
+.widget-frame {
+	display: block;
+	width: 100%;
+	min-height: 360px;
+	border: 0;
+	border-radius: 10px;
+	background: #fff;
+	margin-top: 10px;
 }
 
 .widget-note {
@@ -193,7 +185,7 @@
 }
 
 @media (max-width: 680px) {
-	.widget-value {
-		font-size: 1.25rem;
+	.widget-frame {
+		min-height: 280px;
 	}
 }

@@ -131,54 +131,34 @@
 
   <section class="section-card live-widget-section">
     <div class="section-head-inline">
-      <h2 class="section-title">Live food security indicators</h2>
-      <a href="https://api.worldbank.org" target="_blank" rel="noopener noreferrer">API source</a>
+      <h2 class="section-title">Live food security widgets</h2>
+      <a href="https://hungermap.wfp.org" target="_blank" rel="noopener noreferrer">Open HungerMap</a>
     </div>
-    <p class="section-lead">Latest available global values pulled at runtime from the World Bank Indicators API.</p>
+    <p class="section-lead">Interactive embeds people can view live directly on the site.</p>
 
     <div class="widget-grid">
-      <article class="widget-wrap" role="region" aria-label="Global undernourishment indicator">
-        <h3>Undernourishment prevalence</h3>
-        <p class="widget-subtitle">Share of population undernourished</p>
-        <p class="widget-value" *ngIf="liveIndicators.undernourishment.state === 'ready'; else undernourishmentState">
-          {{ liveIndicators.undernourishment.value }}
-        </p>
-        <ng-template #undernourishmentState>
-          <p class="widget-value widget-value-muted">
-            {{ liveIndicators.undernourishment.state === 'error' ? 'Unavailable right now' : 'Loading latest value...' }}
-          </p>
-        </ng-template>
-        <p class="widget-meta">Latest year: {{ liveIndicators.undernourishment.year || '—' }}</p>
+      <article class="widget-wrap" role="region" aria-label="WFP HungerMap live widget">
+        <h3>WFP HungerMap LIVE</h3>
+        <p class="widget-subtitle">Near real-time food security and crisis risk visualization.</p>
+        <iframe
+          class="widget-frame"
+          title="WFP HungerMap LIVE"
+          loading="lazy"
+          src="https://hungermap.wfp.org/"
+        ></iframe>
       </article>
 
-      <article class="widget-wrap" role="region" aria-label="Global food production index indicator">
-        <h3>Food production index</h3>
-        <p class="widget-subtitle">Output trend of food production (index)</p>
-        <p class="widget-value" *ngIf="liveIndicators.foodProduction.state === 'ready'; else foodProductionState">
-          {{ liveIndicators.foodProduction.value }}
-        </p>
-        <ng-template #foodProductionState>
-          <p class="widget-value widget-value-muted">
-            {{ liveIndicators.foodProduction.state === 'error' ? 'Unavailable right now' : 'Loading latest value...' }}
-          </p>
-        </ng-template>
-        <p class="widget-meta">Latest year: {{ liveIndicators.foodProduction.year || '—' }}</p>
-      </article>
-
-      <article class="widget-wrap" role="region" aria-label="Global waste methane emissions indicator">
-        <h3>Waste methane emissions</h3>
-        <p class="widget-subtitle">Emissions linked to waste systems (kt CO2e)</p>
-        <p class="widget-value" *ngIf="liveIndicators.wasteMethane.state === 'ready'; else wasteMethaneState">
-          {{ liveIndicators.wasteMethane.value }}
-        </p>
-        <ng-template #wasteMethaneState>
-          <p class="widget-value widget-value-muted">
-            {{ liveIndicators.wasteMethane.state === 'error' ? 'Unavailable right now' : 'Loading latest value...' }}
-          </p>
-        </ng-template>
-        <p class="widget-meta">Latest year: {{ liveIndicators.wasteMethane.year || '—' }}</p>
+      <article class="widget-wrap" role="region" aria-label="Food waste chart widget">
+        <h3>Food waste per capita</h3>
+        <p class="widget-subtitle">Latest published global food waste dataset (interactive chart).</p>
+        <iframe
+          class="widget-frame"
+          title="Food waste per capita chart"
+          loading="lazy"
+          src="https://ourworldindata.org/grapher/food-waste-per-capita?tab=chart&time=latest"
+        ></iframe>
       </article>
     </div>
-    <p class="widget-note">Note: A consistent global daily "food wasted per day" API is limited; this uses the closest official global proxies with current published values.</p>
+    <p class="widget-note">If a provider temporarily blocks embedding in some browsers, use the source links above to open the same live data directly.</p>
   </section>
 </ion-content>
