@@ -140,3 +140,24 @@
 	color: var(--bio-card-title);
 	font-size: 1rem;
 }
+
+.widget-wrap {
+	border-radius: 14px;
+	border: 1px solid rgba(132, 255, 196, 0.16);
+	background: var(--bio-panel-soft);
+	box-shadow: var(--bio-card-shadow);
+	overflow: hidden;
+}
+
+.widget-frame {
+	display: block;
+	width: 100%;
+	min-height: 360px;
+	border: 0;
+}
+
+@media (max-width: 680px) {
+	.widget-frame {
+		min-height: 320px;
+	}
+}
