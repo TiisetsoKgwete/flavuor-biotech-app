@@ -13,11 +13,11 @@
 
 .stack-grid h3 {
 	margin: 0 0 8px;
-	color: #f2fff7;
+	color: var(--bio-card-title);
 }
 
 .stack-grid p {
 	margin: 0;
-	color: #ddf5e9;
+	color: var(--bio-card-body);
 	line-height: 1.58;
 }

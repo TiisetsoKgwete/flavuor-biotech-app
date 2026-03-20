@@ -13,11 +13,11 @@
 
 .issues-grid h3 {
 	margin: 0 0 8px;
-	color: #fff0df;
+	color: var(--bio-card-title);
 }
 
 .issues-grid p {
 	margin: 0;
-	color: #faebd8;
+	color: var(--bio-card-body);
 	line-height: 1.58;
 }

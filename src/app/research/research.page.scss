@@ -13,19 +13,19 @@
 
 .refs-grid h3 {
 	margin: 0 0 8px;
-	color: #f3fff8;
+	color: var(--bio-card-title);
 }
 
 .refs-grid p {
 	margin: 0;
-	color: #ddf5e9;
+	color: var(--bio-card-body);
 	line-height: 1.58;
 }
 
 .refs-grid span {
 	display: block;
 	margin-top: 10px;
-	color: #9cf8c5;
+	color: var(--bio-card-meta);
 	font-size: 0.78rem;
 }
 

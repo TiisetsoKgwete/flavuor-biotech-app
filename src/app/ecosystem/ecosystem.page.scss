@@ -19,16 +19,16 @@
 	display: grid;
 	place-items: center;
 	background: rgba(68, 255, 165, 0.24);
-	color: #f3fff8;
+	color: var(--bio-card-title);
 	font-weight: 700;
 }
 
 .flow-grid h3 {
 	margin: 0;
-	color: #f1fff7;
+	color: var(--bio-card-title);
 }
 
 .flow-grid p {
 	margin: 0;
-	color: #ddf5e9;
+	color: var(--bio-card-body);
 }

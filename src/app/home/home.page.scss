@@ -20,7 +20,7 @@
 }
 
 .section-head-inline a {
-	color: #9efdc8;
+	color: var(--bio-card-meta);
 	text-decoration: none;
 	font-size: 0.82rem;
 }
@@ -40,12 +40,12 @@
 
 .tool-card h3 {
 	margin: 0 0 8px;
-	color: #eafff2;
+	color: var(--bio-card-title);
 }
 
 .tool-card p {
 	margin: 0;
-	color: #ddf5e9;
+	color: var(--bio-card-body);
 	font-size: 0.9rem;
 	line-height: 1.55;
 }
@@ -66,13 +66,13 @@
 }
 
 .track-card span {
-	color: #f3fff8;
+	color: var(--bio-card-title);
 	font-weight: 600;
 }
 
 .track-card p {
 	margin: 8px 0 0;
-	color: #ddf5e9;
+	color: var(--bio-card-body);
 	font-size: 0.88rem;
 }
 
