@@ -669,6 +669,17 @@ body.light-mode {
     linear-gradient(155deg, var(--bio-bg-0) 0%, var(--bio-bg-1) 46%, var(--bio-bg-2) 100%);
 }
 
+body.light-mode .display-title,
+body.light-mode .section-title {
+  font-weight: 700;
+}
+
+body.light-mode .body-copy,
+body.light-mode .pill,
+body.light-mode .metric-tile span {
+  font-weight: 500;
+}
+
 body.light-mode .rail-shell {
   background: linear-gradient(180deg, rgba(240, 250, 246, 0.95), rgba(232, 245, 240, 0.92));
   border-color: rgba(108, 209, 168, 0.35);
