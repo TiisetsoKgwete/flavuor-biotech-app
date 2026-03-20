@@ -5,9 +5,10 @@
 }
 
 .values-grid article {
-	border: 1px solid rgba(134, 255, 197, 0.2);
+	border: 1px solid rgba(134, 255, 197, 0.16);
 	border-radius: 14px;
-	background: rgba(6, 21, 14, 0.72);
+	background: var(--bio-panel-soft);
+	box-shadow: var(--bio-card-shadow);
 	padding: 14px;
 }
 

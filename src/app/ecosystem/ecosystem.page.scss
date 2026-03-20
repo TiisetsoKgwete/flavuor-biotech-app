@@ -5,8 +5,9 @@
 
 .flow-grid article {
 	border-radius: 16px;
-	border: 1px solid rgba(136, 255, 199, 0.2);
-	background: rgba(6, 21, 14, 0.7);
+	border: 1px solid rgba(136, 255, 199, 0.16);
+	background: var(--bio-panel-soft);
+	box-shadow: var(--bio-card-shadow);
 	padding: 14px;
 	display: grid;
 	gap: 6px;

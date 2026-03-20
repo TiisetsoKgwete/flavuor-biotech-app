@@ -7,8 +7,9 @@
 .issues-grid article {
 	padding: 14px;
 	border-radius: 16px;
-	border: 1px solid rgba(255, 194, 138, 0.28);
-	background: linear-gradient(180deg, rgba(33, 19, 8, 0.44), rgba(20, 12, 6, 0.6));
+	border: 1px solid rgba(255, 194, 138, 0.22);
+	background: var(--bio-panel-warm);
+	box-shadow: var(--bio-card-shadow);
 }
 
 .issues-grid h3 {

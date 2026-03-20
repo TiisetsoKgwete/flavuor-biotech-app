@@ -6,8 +6,9 @@
 
 .refs-grid article {
 	border-radius: 14px;
-	border: 1px solid rgba(134, 255, 196, 0.22);
-	background: rgba(5, 20, 13, 0.72);
+	border: 1px solid rgba(134, 255, 196, 0.16);
+	background: var(--bio-panel-soft);
+	box-shadow: var(--bio-card-shadow);
 	padding: 14px;
 }
 

@@ -24,14 +24,17 @@
   --bio-accent: #31d17e;
   --bio-accent-soft: #89f7bf;
   --bio-warm: #f7a928;
-  --bio-text: #ecfff4;
-  --bio-muted: #d0f0e2;
-  --bio-panel: rgba(8, 24, 15, 0.76);
+  --bio-text: #f4fffa;
+  --bio-muted: #e4f8ef;
+  --bio-panel: linear-gradient(180deg, rgba(9, 25, 16, 0.88), rgba(7, 18, 12, 0.94));
+  --bio-panel-soft: linear-gradient(180deg, rgba(10, 29, 19, 0.8), rgba(7, 18, 12, 0.86));
+  --bio-panel-warm: linear-gradient(180deg, rgba(35, 21, 8, 0.44), rgba(19, 12, 6, 0.62));
   --bio-border: rgba(130, 255, 190, 0.24);
   --bio-radius: 20px;
-  --bio-card-title: #ecfff5;
-  --bio-card-body: #d8f2e6;
-  --bio-card-meta: #bfe8d6;
+  --bio-card-title: #ffffff;
+  --bio-card-body: #e8f8f2;
+  --bio-card-meta: #cdeede;
+  --bio-card-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
   --safe-top: env(safe-area-inset-top, 0px);
   --chrome-height: 52px;
   --filter-offset: 56px;
@@ -67,14 +70,14 @@ ion-content {
   background: var(--bio-panel);
   border: 1px solid var(--bio-border);
   border-radius: var(--bio-radius);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+  box-shadow: var(--bio-card-shadow), inset 0 1px 0 rgba(180, 255, 215, 0.04);
   padding: 20px;
 }
 
 .title-kicker {
   color: var(--bio-accent-soft);
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
+  font-size: 0.79rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   margin: 0 0 8px;
 }
@@ -82,23 +85,27 @@ ion-content {
 .display-title {
   margin: 0;
   font-family: 'Fraunces', serif;
-  font-size: clamp(2.1rem, 5vw, 3.9rem);
-  line-height: 1.02;
-  letter-spacing: 0.01em;
-  color: #f5fff8;
+  font-size: clamp(2.2rem, 5.2vw, 4.15rem);
+  line-height: 0.98;
+  letter-spacing: 0.005em;
+  color: #ffffff;
 }
 
 .section-title {
   margin: 0;
   font-family: 'Fraunces', serif;
-  font-size: clamp(1.55rem, 3vw, 2.3rem);
-  color: #f6fff9;
+  font-size: clamp(1.64rem, 3.15vw, 2.45rem);
+  line-height: 1.04;
+  letter-spacing: 0.003em;
+  color: #ffffff;
 }
 
 .body-copy {
   margin: 0;
   color: var(--bio-muted);
-  line-height: 1.7;
+  font-weight: 400;
+  line-height: 1.78;
+  letter-spacing: 0.004em;
 }
 
 .metric-grid {
@@ -117,11 +124,11 @@ ion-content {
 .metric-tile strong {
   display: block;
   font-size: 1.38rem;
-  color: #ecfff5;
+  color: #ffffff;
 }
 
 .metric-tile span {
-  color: #d2f0e5;
+  color: var(--bio-card-body);
   font-size: 0.82rem;
 }
 
@@ -136,7 +143,7 @@ ion-content {
   border-radius: 999px;
   border: 1px solid rgba(128, 255, 192, 0.24);
   background: rgba(6, 20, 13, 0.72);
-  color: #dbfce9;
+  color: #e8f8f2;
   font-size: 0.8rem;
 }
 
@@ -177,7 +184,7 @@ html.light-mode .section-title {
 html.light-mode .section-card {
   background: rgba(220, 242, 235, 0.55);
   border-color: rgba(108, 209, 168, 0.32);
-  box-shadow: 0 8px 20px rgba(49, 150, 96, 0.14);
+  box-shadow: 0 8px 20px rgba(49, 150, 96, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 html.light-mode .metric-tile {
@@ -655,10 +662,13 @@ html.light-mode {
   --bio-text: #153928;
   --bio-muted: #486656;
   --bio-panel: rgba(206, 228, 218, 0.76);
+  --bio-panel-soft: linear-gradient(180deg, rgba(216, 236, 227, 0.95), rgba(204, 228, 217, 0.92));
+  --bio-panel-warm: linear-gradient(180deg, rgba(243, 226, 204, 0.9), rgba(236, 214, 188, 0.9));
   --bio-border: rgba(108, 209, 168, 0.32);
   --bio-card-title: #173e2d;
   --bio-card-body: #335947;
   --bio-card-meta: #466d5b;
+  --bio-card-shadow: 0 6px 16px rgba(49, 150, 96, 0.14);
 }
 
 body.light-mode {
