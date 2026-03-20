@@ -137,26 +137,38 @@
     <p class="section-lead">Interactive embeds people can view live directly on the site.</p>
 
     <div class="widget-grid">
-      <article class="widget-wrap" role="region" aria-label="WFP HungerMap live widget">
+      <article class="widget-wrap" [class.loaded]="widgetLoaded.hunger" role="region" aria-label="WFP HungerMap live widget">
         <h3>WFP HungerMap LIVE</h3>
         <p class="widget-subtitle">Near real-time food security and crisis risk visualization.</p>
+        <p class="widget-updated">Updated by source: near real time</p>
+        <div class="widget-frame-shell">
+          <div class="widget-skeleton" aria-hidden="true"></div>
         <iframe
           class="widget-frame"
           title="WFP HungerMap LIVE"
           loading="lazy"
+          (load)="onWidgetLoad('hunger')"
           src="https://hungermap.wfp.org/"
         ></iframe>
+        </div>
+        <a class="widget-fallback" href="https://hungermap.wfp.org" target="_blank" rel="noopener noreferrer">Open in new tab</a>
       </article>
 
-      <article class="widget-wrap" role="region" aria-label="Food waste chart widget">
+      <article class="widget-wrap" [class.loaded]="widgetLoaded.waste" role="region" aria-label="Food waste chart widget">
         <h3>Food waste per capita</h3>
         <p class="widget-subtitle">Latest published global food waste dataset (interactive chart).</p>
+        <p class="widget-updated">Updated by source: latest published dataset</p>
+        <div class="widget-frame-shell">
+          <div class="widget-skeleton" aria-hidden="true"></div>
         <iframe
           class="widget-frame"
           title="Food waste per capita chart"
           loading="lazy"
+          (load)="onWidgetLoad('waste')"
           src="https://ourworldindata.org/grapher/food-waste-per-capita?tab=chart&time=latest"
         ></iframe>
+        </div>
+        <a class="widget-fallback" href="https://ourworldindata.org/grapher/food-waste-per-capita?tab=chart&time=latest" target="_blank" rel="noopener noreferrer">Open in new tab</a>
       </article>
     </div>
     <p class="widget-note">If a provider temporarily blocks embedding in some browsers, use the source links above to open the same live data directly.</p>

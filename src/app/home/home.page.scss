@@ -168,6 +168,34 @@
 	color: var(--bio-card-meta);
 }
 
+.widget-updated {
+	margin: 6px 0 0;
+	font-size: 0.76rem;
+	color: var(--bio-card-meta);
+}
+
+.widget-frame-shell {
+	position: relative;
+	margin-top: 10px;
+}
+
+.widget-skeleton {
+	position: absolute;
+	inset: 0;
+	border-radius: 10px;
+	background: linear-gradient(90deg, rgba(215, 235, 226, 0.55) 0%, rgba(245, 255, 250, 0.75) 50%, rgba(215, 235, 226, 0.55) 100%);
+	background-size: 220% 100%;
+	animation: widgetShimmer 1.5s ease-in-out infinite;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.widget-wrap.loaded .widget-skeleton {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease;
+}
+
 .widget-frame {
 	display: block;
 	width: 100%;
@@ -175,7 +203,21 @@
 	border: 0;
 	border-radius: 10px;
 	background: #fff;
-	margin-top: 10px;
+	position: relative;
+	z-index: 2;
+}
+
+.widget-fallback {
+	display: inline-block;
+	margin-top: 8px;
+	font-size: 0.8rem;
+	color: var(--bio-card-meta);
+	text-decoration: none;
+}
+
+.widget-fallback:hover {
+	color: var(--bio-card-title);
+	text-decoration: underline;
 }
 
 .widget-note {
@@ -187,5 +229,14 @@
 @media (max-width: 680px) {
 	.widget-frame {
 		min-height: 280px;
+	}
+}
+
+@keyframes widgetShimmer {
+	0% {
+		background-position: 100% 0;
+	}
+	100% {
+		background-position: -100% 0;
 	}
 }
