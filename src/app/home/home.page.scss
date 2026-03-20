@@ -147,17 +147,32 @@
 	background: var(--bio-panel-soft);
 	box-shadow: var(--bio-card-shadow);
 	overflow: hidden;
+	padding: 10px;
+}
+
+.widget-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 10px;
+}
+
+.widget-wrap h3 {
+	margin: 0 0 8px;
+	color: var(--bio-card-title);
+	font-size: 1rem;
 }
 
 .widget-frame {
 	display: block;
 	width: 100%;
-	min-height: 360px;
+	min-height: 320px;
 	border: 0;
+	border-radius: 10px;
+	background: #fff;
 }
 
 @media (max-width: 680px) {
 	.widget-frame {
-		min-height: 320px;
+		min-height: 280px;
 	}
 }
