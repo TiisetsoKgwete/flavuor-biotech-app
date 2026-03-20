@@ -108,6 +108,17 @@ ion-content {
   letter-spacing: 0.004em;
 }
 
+a:focus-visible,
+button:focus-visible,
+ion-button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(137, 247, 191, 0.95);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
 .metric-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -666,9 +677,18 @@ html.light-mode {
   --bio-panel-warm: linear-gradient(180deg, rgba(243, 226, 204, 0.9), rgba(236, 214, 188, 0.9));
   --bio-border: rgba(108, 209, 168, 0.32);
   --bio-card-title: #173e2d;
-  --bio-card-body: #335947;
-  --bio-card-meta: #466d5b;
+  --bio-card-body: #274b3a;
+  --bio-card-meta: #3b604f;
   --bio-card-shadow: 0 6px 16px rgba(49, 150, 96, 0.14);
+}
+
+html.light-mode a:focus-visible,
+html.light-mode button:focus-visible,
+html.light-mode ion-button:focus-visible,
+html.light-mode input:focus-visible,
+html.light-mode textarea:focus-visible,
+html.light-mode select:focus-visible {
+  outline: 2px solid rgba(17, 136, 68, 0.75);
 }
 
 body.light-mode {

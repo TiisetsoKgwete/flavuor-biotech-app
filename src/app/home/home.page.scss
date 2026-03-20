@@ -25,6 +25,13 @@
 	font-size: 0.82rem;
 }
 
+.section-lead {
+	margin: 0 0 12px;
+	color: var(--bio-card-meta);
+	font-size: 0.9rem;
+	line-height: 1.65;
+}
+
 .toolkit-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -83,4 +90,53 @@
 	display: grid;
 	gap: 12px;
 	justify-items: center;
+}
+
+.proof-grid,
+.process-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 10px;
+}
+
+.proof-grid article,
+.process-grid article {
+	border-radius: 14px;
+	border: 1px solid rgba(132, 255, 196, 0.16);
+	background: var(--bio-panel-soft);
+	box-shadow: var(--bio-card-shadow);
+	padding: 14px;
+}
+
+.proof-grid strong {
+	display: block;
+	color: var(--bio-card-title);
+	font-size: 1.18rem;
+	margin-bottom: 8px;
+}
+
+.proof-grid p,
+.process-grid p {
+	margin: 0;
+	color: var(--bio-card-body);
+	line-height: 1.58;
+	font-size: 0.9rem;
+}
+
+.process-grid span {
+	display: inline-grid;
+	place-items: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 8px;
+	background: rgba(68, 255, 165, 0.22);
+	color: var(--bio-card-title);
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+.process-grid h3 {
+	margin: 0 0 8px;
+	color: var(--bio-card-title);
+	font-size: 1rem;
 }

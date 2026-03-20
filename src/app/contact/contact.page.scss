@@ -26,3 +26,15 @@
 .form-wrap textarea::placeholder {
 	color: var(--bio-card-meta);
 }
+
+html.light-mode .form-wrap input,
+html.light-mode .form-wrap select,
+html.light-mode .form-wrap textarea {
+	border: 1px solid rgba(80, 173, 136, 0.42);
+	background: rgba(233, 246, 240, 0.95);
+	color: #163f2d;
+}
+
+html.light-mode .form-wrap label {
+	color: #2f5645;
+}
