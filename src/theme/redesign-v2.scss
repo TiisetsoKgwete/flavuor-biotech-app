@@ -19,6 +19,11 @@ html.redesign-v2 {
   --v2-accent: #186b44;
   --v2-accent-dim: rgba(24, 107, 68, 0.12);
   --v2-number: #0f5c38;
+  --v2-inverse-bg: #0c1a12;
+  --v2-inverse-bg-soft: #13241b;
+  --v2-inverse-text: #edf7f1;
+  --v2-inverse-muted: rgba(210, 235, 220, 0.72);
+  --v2-button-text: #f3faf5;
   --v2-shadow: 0 1px 4px rgba(12, 26, 18, 0.07);
 }
 
@@ -35,6 +40,11 @@ html.redesign-v2.dark-mode {
   --v2-accent: #7bd79f;
   --v2-accent-dim: rgba(123, 215, 159, 0.12);
   --v2-number: #94e4b3;
+  --v2-inverse-bg: #102018;
+  --v2-inverse-bg-soft: #162a20;
+  --v2-inverse-text: #eef6f0;
+  --v2-inverse-muted: rgba(214, 230, 221, 0.76);
+  --v2-button-text: #08120d;
   --v2-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
@@ -293,8 +303,8 @@ html.redesign-v2 .pill {
 
 /* ── Buttons ── */
 html.redesign-v2 ion-button.bio-solid {
-  --background: var(--v2-ink);
-  --color: #f3faf5;
+  --background: var(--v2-inverse-bg);
+  --color: var(--v2-button-text);
   --border-radius: 4px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -618,26 +628,26 @@ html.redesign-v2 .commitments ul li::before {
 
 /* ── Mission Callout — dark inverted section ── */
 html.redesign-v2 .mission-callout {
-  background: var(--v2-ink) !important;
+  background: var(--v2-inverse-bg) !important;
   border-bottom: none !important;
   padding: 52px 20px !important;
 }
 
 html.redesign-v2 .mission-callout .section-title {
-  color: #edf7f1 !important;
+  color: var(--v2-inverse-text) !important;
   font-size: clamp(2rem, 4.5vw, 3.2rem) !important;
   max-width: 20ch;
 }
 
 html.redesign-v2 .mission-callout .body-copy {
-  color: rgba(210, 235, 220, 0.72) !important;
+  color: var(--v2-inverse-muted) !important;
   max-width: 52ch;
   margin-bottom: 24px;
 }
 
 html.redesign-v2 .mission-callout ion-button.bio-solid {
   --background: var(--v2-accent);
-  --color: #f5fff9;
+  --color: var(--v2-button-text);
   --border-radius: 4px;
 }
 
