@@ -1,62 +1,152 @@
-/* Whole-site redesign preview mode (zero-risk): active only with html.redesign-v2 */
+@import url('https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+/* Scientific Editorial preview mode: enabled only with html/body.redesign-v2 */
 
 html.redesign-v2,
 body.redesign-v2 {
-  --bio-bg-0: #04130d;
-  --bio-bg-1: #082219;
-  --bio-bg-2: #0e3225;
-  --bio-border: rgba(148, 255, 205, 0.2);
-  --bio-card-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  --bio-bg-0: #f4f4ef;
+  --bio-bg-1: #eceee8;
+  --bio-bg-2: #e3e8e0;
+  --bio-text: #1a2f24;
+  --bio-muted: #4f6c5f;
+  --bio-accent: #1f7a52;
+  --bio-accent-soft: #2f9b6d;
+  --bio-border: rgba(44, 93, 70, 0.18);
+  --bio-card-title: #163224;
+  --bio-card-body: #3f6352;
+  --bio-card-meta: #587666;
+  --bio-panel: linear-gradient(180deg, rgba(253, 254, 251, 0.93), rgba(247, 250, 244, 0.9));
+  --bio-card-shadow: 0 10px 28px rgba(28, 56, 44, 0.08);
 }
 
 html.redesign-v2 body {
+  color: var(--bio-text);
   background:
-    radial-gradient(1200px 680px at 6% -8%, rgba(110, 255, 185, 0.12), transparent 54%),
-    radial-gradient(920px 620px at 95% 4%, rgba(83, 170, 255, 0.14), transparent 52%),
-    linear-gradient(160deg, var(--bio-bg-0) 0%, var(--bio-bg-1) 50%, var(--bio-bg-2) 100%);
+    radial-gradient(900px 500px at -6% 0%, rgba(43, 122, 83, 0.14), transparent 58%),
+    radial-gradient(900px 520px at 104% 6%, rgba(145, 178, 121, 0.15), transparent 56%),
+    linear-gradient(156deg, var(--bio-bg-0) 0%, var(--bio-bg-1) 55%, var(--bio-bg-2) 100%);
+}
+
+html.redesign-v2,
+html.redesign-v2 body,
+html.redesign-v2 ion-app,
+html.redesign-v2 ion-content {
+  font-family: 'Work Sans', 'Segoe UI', sans-serif;
+}
+
+html.redesign-v2 .display-title,
+html.redesign-v2 .section-title,
+html.redesign-v2 .brand-copy strong,
+html.redesign-v2 .mission-callout .section-title {
+  font-family: 'Literata', Georgia, serif;
+  letter-spacing: -0.01em;
+  color: var(--bio-card-title);
 }
 
 html.redesign-v2 .main-frame {
-  max-width: 1240px;
+  max-width: 1220px;
   margin: 0 auto;
 }
 
-html.redesign-v2 .top-chrome,
+html.redesign-v2 .top-chrome {
+  background: rgba(249, 252, 246, 0.86);
+  border: 1px solid rgba(44, 93, 70, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(26, 53, 41, 0.08);
+}
+
 html.redesign-v2 .global-filter-row,
-html.redesign-v2 .tablet-links-drawer,
-html.redesign-v2 .section-card {
-  border-radius: 18px;
-  border-color: rgba(148, 255, 205, 0.22);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(10px);
+html.redesign-v2 .tablet-links-drawer {
+  background: rgba(248, 251, 245, 0.82);
+  border: 1px solid rgba(44, 93, 70, 0.16);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(26, 53, 41, 0.06);
+}
+
+html.redesign-v2 .top-links a,
+html.redesign-v2 .tablet-links-drawer a {
+  color: #2b5544;
+  font-weight: 500;
+}
+
+html.redesign-v2 .top-links a.active,
+html.redesign-v2 .tablet-links-drawer a.active {
+  color: #173726;
 }
 
 html.redesign-v2 .page-shell {
-  gap: 18px;
-  padding: 0 10px 28px;
+  gap: 24px;
+  padding: 2px 14px 34px;
 }
 
 html.redesign-v2 .section-card {
-  padding: 22px;
-  background: linear-gradient(180deg, rgba(9, 27, 19, 0.8), rgba(8, 21, 15, 0.88));
+  background: var(--bio-panel);
+  border: 1px solid var(--bio-border);
+  border-radius: 18px;
+  box-shadow: var(--bio-card-shadow);
+  padding: 26px;
+}
+
+html.redesign-v2 .title-kicker {
+  color: #2f7f58;
+  font-size: 0.74rem;
+  letter-spacing: 0.19em;
 }
 
 html.redesign-v2 .display-title {
-  font-size: clamp(2.3rem, 4.6vw, 3.8rem);
-  line-height: 1.02;
+  font-size: clamp(2.45rem, 5.1vw, 4.3rem);
+  line-height: 1;
 }
 
 html.redesign-v2 .section-title {
-  font-size: clamp(1.5rem, 2.7vw, 2.1rem);
-  line-height: 1.06;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.08;
 }
 
 html.redesign-v2 .body-copy,
 html.redesign-v2 .section-lead,
 html.redesign-v2 .insight-list span,
 html.redesign-v2 .proof-grid p,
-html.redesign-v2 .process-grid p {
-  line-height: 1.62;
+html.redesign-v2 .process-grid p,
+html.redesign-v2 .widget-subtitle,
+html.redesign-v2 .widget-note {
+  color: #4d6a5c;
+  line-height: 1.66;
+}
+
+html.redesign-v2 .hero-card {
+  min-height: auto;
+  background:
+    linear-gradient(180deg, rgba(251, 254, 249, 0.95), rgba(243, 249, 241, 0.9)),
+    radial-gradient(700px 220px at 6% 0%, rgba(83, 158, 112, 0.2), transparent 70%);
+  border-left: 5px solid rgba(31, 122, 82, 0.7);
+}
+
+html.redesign-v2 .pill-list {
+  gap: 6px;
+}
+
+html.redesign-v2 .pill {
+  background: rgba(222, 239, 229, 0.8);
+  color: #25523f;
+  border-color: rgba(38, 90, 67, 0.2);
+  font-size: 0.75rem;
+}
+
+html.redesign-v2 .cta-row {
+  gap: 10px;
+}
+
+html.redesign-v2 ion-button.bio-solid {
+  --background: linear-gradient(135deg, #2f8f63, #1f6d49);
+  --color: #f5fff9;
+  --border-radius: 10px;
+}
+
+html.redesign-v2 ion-button.bio-ghost {
+  --border-color: rgba(33, 111, 75, 0.45);
+  --color: #2c634c;
+  --border-radius: 10px;
 }
 
 html.redesign-v2 .metric-grid,
@@ -71,22 +161,37 @@ html.redesign-v2 .insight-block,
 html.redesign-v2 .proof-grid article,
 html.redesign-v2 .process-grid article,
 html.redesign-v2 .widget-wrap {
-  border-radius: 16px;
-  border-color: rgba(148, 255, 205, 0.18);
-  background: rgba(10, 28, 19, 0.58);
+  background: rgba(247, 251, 246, 0.84);
+  border: 1px solid rgba(44, 93, 70, 0.15);
+  border-radius: 14px;
 }
 
-html.redesign-v2 .cta-row {
-  gap: 12px;
+html.redesign-v2 .metric-tile strong,
+html.redesign-v2 .proof-grid strong,
+html.redesign-v2 .process-grid h3,
+html.redesign-v2 .insight-list strong,
+html.redesign-v2 .widget-wrap h3 {
+  color: #163224;
 }
 
-html.redesign-v2 ion-button.bio-solid {
-  --background: linear-gradient(135deg, #50e49a, #2fb679);
-  --color: #062514;
+html.redesign-v2 .section-head-inline a,
+html.redesign-v2 .widget-fallback {
+  color: #2a654b;
 }
 
-html.redesign-v2 ion-button.bio-ghost {
-  --border-color: rgba(148, 255, 205, 0.4);
+html.redesign-v2 .section-head-inline a:hover,
+html.redesign-v2 .widget-fallback:hover {
+  color: #184832;
+}
+
+html.redesign-v2 .mission-callout {
+  background:
+    linear-gradient(180deg, rgba(241, 249, 241, 0.93), rgba(233, 244, 233, 0.9)),
+    radial-gradient(400px 180px at 50% 0%, rgba(77, 156, 113, 0.14), transparent 72%);
+}
+
+html.redesign-v2 .widget-frame {
+  border: 1px solid rgba(44, 93, 70, 0.16);
 }
 
 html.redesign-v2 .preview-badge {
@@ -96,9 +201,9 @@ html.redesign-v2 .preview-badge {
   margin-left: 10px;
   padding: 4px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 255, 205, 0.45);
-  background: rgba(13, 44, 30, 0.78);
-  color: #d9ffee;
+  border: 1px solid rgba(31, 122, 82, 0.45);
+  background: rgba(239, 249, 240, 0.9);
+  color: #1f6545;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -111,23 +216,31 @@ html.redesign-v2 .preview-badge {
   }
 
   html.redesign-v2 .page-shell {
-    gap: 14px;
-    padding: 0 8px 24px;
+    gap: 16px;
+    padding: 0 10px 26px;
   }
 
   html.redesign-v2 .section-card {
-    padding: 18px;
+    padding: 20px;
   }
 }
 
 @media (max-width: 680px) {
+  html.redesign-v2 .page-shell {
+    padding: 0 8px 18px;
+  }
+
   html.redesign-v2 .section-card {
     padding: 14px;
-    border-radius: 14px;
+    border-radius: 12px;
   }
 
   html.redesign-v2 .display-title {
-    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    font-size: clamp(1.95rem, 8.2vw, 2.7rem);
+  }
+
+  html.redesign-v2 .section-title {
+    font-size: clamp(1.35rem, 6vw, 1.8rem);
   }
 
   html.redesign-v2 .preview-badge {
