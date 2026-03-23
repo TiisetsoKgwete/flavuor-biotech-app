@@ -22,12 +22,58 @@ html.redesign-v2 {
   --v2-shadow: 0 1px 4px rgba(12, 26, 18, 0.07);
 }
 
+html.redesign-v2.dark-mode {
+  --v2-ink: #eef6f0;
+  --v2-ink-mid: #d6e6dd;
+  --v2-ink-soft: #aec6ba;
+  --v2-ink-faint: #83a091;
+  --v2-paper: #08120d;
+  --v2-paper-up: #0d1812;
+  --v2-paper-deep: #132019;
+  --v2-rule: rgba(173, 214, 193, 0.18);
+  --v2-rule-bold: rgba(173, 214, 193, 0.34);
+  --v2-accent: #7bd79f;
+  --v2-accent-dim: rgba(123, 215, 159, 0.12);
+  --v2-number: #94e4b3;
+  --v2-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+html.redesign-v2.light-mode {
+  --v2-ink: #0c1a12;
+  --v2-ink-mid: #2e4838;
+  --v2-ink-soft: #516b5d;
+  --v2-ink-faint: #80998c;
+  --v2-paper: #f6f6f0;
+  --v2-paper-up: #fbfbf6;
+  --v2-paper-deep: #eceee8;
+  --v2-rule: rgba(60, 90, 75, 0.2);
+  --v2-rule-bold: rgba(60, 90, 75, 0.4);
+  --v2-accent: #186b44;
+  --v2-accent-dim: rgba(24, 107, 68, 0.12);
+  --v2-number: #0f5c38;
+  --v2-shadow: 0 1px 4px rgba(12, 26, 18, 0.07);
+}
+
 /* ── Global ── */
 html.redesign-v2 body {
   background: var(--v2-paper);
   color: var(--v2-ink);
   font-family: 'Work Sans', 'Segoe UI', sans-serif;
   font-weight: 400;
+}
+
+html.redesign-v2.dark-mode body {
+  background:
+    radial-gradient(980px 540px at 0% 0%, rgba(123, 215, 159, 0.08), transparent 52%),
+    radial-gradient(760px 420px at 100% 0%, rgba(97, 174, 136, 0.08), transparent 48%),
+    linear-gradient(160deg, #060d09 0%, var(--v2-paper) 46%, var(--v2-paper-deep) 100%);
+}
+
+html.redesign-v2.light-mode body {
+  background:
+    radial-gradient(980px 540px at 0% 0%, rgba(24, 107, 68, 0.06), transparent 52%),
+    radial-gradient(760px 420px at 100% 0%, rgba(24, 107, 68, 0.05), transparent 48%),
+    linear-gradient(160deg, #fcfcf7 0%, var(--v2-paper) 46%, var(--v2-paper-deep) 100%);
 }
 
 html.redesign-v2 ion-app,
@@ -38,8 +84,9 @@ html.redesign-v2 ion-content {
 
 /* ── App Chrome ── */
 html.redesign-v2 .main-frame {
-  max-width: 1160px;
+  max-width: 1480px;
   margin: 0 auto;
+  width: 100%;
 }
 
 html.redesign-v2 .top-chrome {
@@ -47,6 +94,15 @@ html.redesign-v2 .top-chrome {
   border: 1px solid var(--v2-rule);
   border-radius: 8px;
   box-shadow: var(--v2-shadow);
+}
+
+html.redesign-v2 .brand-copy strong,
+html.redesign-v2 .brand-copy span,
+html.redesign-v2 .brand-badge,
+html.redesign-v2 ion-menu-button,
+html.redesign-v2 .tablet-nav-toggle,
+html.redesign-v2 .scroll-to-top-btn {
+  color: var(--v2-ink);
 }
 
 html.redesign-v2 .global-filter-row,
@@ -80,11 +136,16 @@ html.redesign-v2 .filter-chip {
   letter-spacing: 0.04em;
 }
 
+html.redesign-v2.dark-mode .filter-chip {
+  border-color: rgba(123, 215, 159, 0.24);
+}
+
 /* ── Page Shell ── */
 html.redesign-v2 .page-shell {
   gap: 0 !important;
   padding: 0 0 48px !important;
-  max-width: 860px;
+  max-width: 1280px;
+  width: calc(100% - 28px);
   margin: 0 auto;
   background: transparent;
 }
@@ -95,7 +156,7 @@ html.redesign-v2 .section-card {
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  padding: 36px 20px !important;
+  padding: 42px 28px !important;
   border-bottom: 1px solid var(--v2-rule) !important;
 }
 
@@ -140,14 +201,14 @@ html.redesign-v2 .section-lead {
   font-size: 1.05rem;
   line-height: 1.72;
   color: var(--v2-ink-soft) !important;
-  max-width: 60ch;
+  max-width: 68ch;
 }
 
 /* ── Hero ── */
 html.redesign-v2 .hero-card {
   background: var(--v2-paper-up) !important;
   border-left: none !important;
-  padding: 52px 20px 44px !important;
+  padding: 58px 28px 48px !important;
   position: relative;
 }
 
@@ -163,12 +224,13 @@ html.redesign-v2 .hero-card::before {
 html.redesign-v2 .hero-editorial-wrap {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 40px;
+  gap: 56px;
   align-items: start;
 }
 
 html.redesign-v2 .hero-copy {
   min-width: 0;
+  max-width: 880px;
 }
 
 html.redesign-v2 .hero-pull-stat {
@@ -286,6 +348,56 @@ html.redesign-v2 .metric-tile span {
   color: var(--v2-ink-faint) !important;
   line-height: 1.4;
   margin-top: 8px;
+}
+
+html.redesign-v2.dark-mode .top-chrome,
+html.redesign-v2.dark-mode .global-filter-row,
+html.redesign-v2.dark-mode .tablet-links-drawer,
+html.redesign-v2.dark-mode .widget-wrap,
+html.redesign-v2.dark-mode .form-wrap input,
+html.redesign-v2.dark-mode .form-wrap select,
+html.redesign-v2.dark-mode .form-wrap textarea,
+html.redesign-v2.dark-mode .hero-card {
+  background: var(--v2-paper-up) !important;
+}
+
+html.redesign-v2.dark-mode .widget-wrap,
+html.redesign-v2.dark-mode .form-wrap input,
+html.redesign-v2.dark-mode .form-wrap select,
+html.redesign-v2.dark-mode .form-wrap textarea,
+html.redesign-v2.dark-mode .widget-frame {
+  border-color: var(--v2-rule) !important;
+}
+
+html.redesign-v2.dark-mode .preview-badge,
+html.redesign-v2.dark-mode .pill {
+  border-color: rgba(123, 215, 159, 0.35) !important;
+  color: var(--v2-accent) !important;
+}
+
+html.redesign-v2.dark-mode .preview-badge {
+  background: rgba(123, 215, 159, 0.08);
+}
+
+html.redesign-v2.dark-mode .widget-subtitle,
+html.redesign-v2.dark-mode .widget-note,
+html.redesign-v2.dark-mode .metric-tile span,
+html.redesign-v2.dark-mode .hero-pull-stat p,
+html.redesign-v2.dark-mode .form-wrap label,
+html.redesign-v2.dark-mode ::placeholder {
+  color: var(--v2-ink-faint) !important;
+}
+
+html.redesign-v2.dark-mode .widget-fallback,
+html.redesign-v2.dark-mode .section-head-inline a,
+html.redesign-v2.dark-mode .top-links a.active,
+html.redesign-v2.dark-mode .tablet-links-drawer a.active {
+  color: var(--v2-accent) !important;
+}
+
+html.redesign-v2.light-mode .preview-badge,
+html.redesign-v2.light-mode .pill {
+  border-color: rgba(24, 107, 68, 0.35) !important;
 }
 
 /* ── Values / Issues / Stack: numbered editorial columns ── */
@@ -732,6 +844,11 @@ html.redesign-v2 .form-wrap textarea {
   box-sizing: border-box;
 }
 
+html.redesign-v2 .form-wrap input::placeholder,
+html.redesign-v2 .form-wrap textarea::placeholder {
+  color: var(--v2-ink-faint);
+}
+
 html.redesign-v2 .form-wrap input:focus,
 html.redesign-v2 .form-wrap select:focus,
 html.redesign-v2 .form-wrap textarea:focus {
@@ -787,6 +904,7 @@ html.redesign-v2 .preview-badge {
 @media (max-width: 640px) {
   html.redesign-v2 .page-shell {
     padding: 0 0 32px !important;
+    width: 100%;
   }
   html.redesign-v2 .section-card {
     padding: 28px 16px !important;
