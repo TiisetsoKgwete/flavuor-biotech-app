@@ -34,16 +34,24 @@
 
 .hero-card {
 	display: grid;
-	gap: 16px;
-	min-height: 420px;
-	padding: 26px;
+	gap: 12px;
+	min-height: 360px;
+	padding: 22px;
 	background:
 		linear-gradient(115deg, rgba(9, 28, 18, 0.84), rgba(11, 31, 20, 0.7)),
 		url('https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1400&q=75') center/cover;
 }
 
 .hero-card .body-copy {
-	max-width: 760px;
+	max-width: 540px;
+}
+
+.hero-card .pill-list {
+	gap: 6px;
+}
+
+.hero-card .cta-row {
+	margin-top: 4px;
 }
 
 .top-metrics {
