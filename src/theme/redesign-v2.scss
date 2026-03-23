@@ -158,6 +158,7 @@ html.redesign-v2 .page-shell {
   width: calc(100% - 28px);
   margin: 0 auto;
   background: transparent;
+  counter-reset: section-index;
 }
 
 /* ── Section Cards → flat editorial sections ── */
@@ -166,8 +167,24 @@ html.redesign-v2 .section-card {
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  padding: 42px 28px !important;
+  padding: 60px 28px !important;
   border-bottom: 1px solid var(--v2-rule) !important;
+}
+
+html.redesign-v2 .section-card:not(.hero-card):not(.mission-callout) {
+  counter-increment: section-index;
+  position: relative;
+}
+
+html.redesign-v2 .section-card:not(.hero-card):not(.mission-callout)::before {
+  content: counter(section-index, decimal-leading-zero);
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--v2-ink-faint);
 }
 
 html.redesign-v2 .section-card:last-child {
@@ -211,7 +228,7 @@ html.redesign-v2 .section-lead {
   font-size: 1.05rem;
   line-height: 1.72;
   color: var(--v2-ink-soft) !important;
-  max-width: 68ch;
+  max-width: 60ch;
 }
 
 /* ── Hero ── */
@@ -280,6 +297,41 @@ html.redesign-v2 .hero-pull-stat p {
   text-align: right;
   margin-top: 10px;
   max-width: 140px;
+}
+
+html.redesign-v2 .pull-stat-secondary {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--v2-rule);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+html.redesign-v2 .pull-stat-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+html.redesign-v2 .pull-stat-row strong {
+  font-family: 'Literata', Georgia, serif;
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--v2-number);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: block;
+}
+
+html.redesign-v2 .pull-stat-row span {
+  font-size: 0.68rem;
+  color: var(--v2-ink-faint);
+  text-align: right;
+  margin-top: 3px;
+  line-height: 1.3;
+  max-width: 110px;
 }
 
 /* ── Pills ── */
@@ -427,6 +479,22 @@ html.redesign-v2.dark-mode .section-head-inline a,
 html.redesign-v2.dark-mode .top-links a.active,
 html.redesign-v2.dark-mode .tablet-links-drawer a.active {
   color: var(--v2-accent) !important;
+}
+
+html.redesign-v2.dark-mode .resources-quote p {
+  color: var(--v2-ink) !important;
+}
+
+html.redesign-v2.dark-mode .resources-links ul li a {
+  color: var(--v2-ink) !important;
+}
+
+html.redesign-v2.dark-mode .resources-links ul li {
+  color: var(--v2-ink-soft) !important;
+}
+
+html.redesign-v2.dark-mode .home-page .pull-stat-row strong {
+  color: var(--v2-number) !important;
 }
 
 html.redesign-v2.light-mode .preview-badge,
@@ -776,6 +844,73 @@ html.redesign-v2 .process-grid article p {
   line-height: 1.5;
 }
 
+/* ── Resources Row ── */
+html.redesign-v2 .resources-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+html.redesign-v2 .resources-quote {
+  border-left: 3px solid var(--v2-accent);
+  padding-left: 22px;
+  margin: 0;
+}
+
+html.redesign-v2 .resources-quote p {
+  font-family: 'Literata', Georgia, serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 500;
+  color: var(--v2-ink);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+}
+
+html.redesign-v2 .resources-quote cite {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--v2-ink-faint);
+  font-style: normal;
+}
+
+html.redesign-v2 .resources-links h3 {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--v2-ink-faint);
+  margin-bottom: 12px;
+}
+
+html.redesign-v2 .resources-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--v2-rule);
+}
+
+html.redesign-v2 .resources-links ul li {
+  border-bottom: 1px solid var(--v2-rule);
+  padding: 13px 0;
+  font-size: 0.86rem;
+  color: var(--v2-ink-soft);
+  line-height: 1.5;
+}
+
+html.redesign-v2 .resources-links ul li a {
+  color: var(--v2-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+html.redesign-v2 .resources-links ul li a:hover {
+  color: var(--v2-accent);
+}
+
 /* ── Widgets ── */
 html.redesign-v2 .widget-grid {
   display: grid !important;
@@ -940,8 +1075,11 @@ html.redesign-v2 .preview-badge {
     padding: 0 0 32px !important;
     width: 100%;
   }
+  html.redesign-v2 .section-card:not(.hero-card):not(.mission-callout)::before {
+    right: 16px;
+  }
   html.redesign-v2 .section-card {
-    padding: 28px 16px !important;
+    padding: 32px 16px !important;
   }
   html.redesign-v2 .hero-card {
     padding: 36px 16px 30px !important;
@@ -953,6 +1091,10 @@ html.redesign-v2 .preview-badge {
   html.redesign-v2 .issues-grid,
   html.redesign-v2 .stack-grid {
     grid-template-columns: 1fr !important;
+  }
+  html.redesign-v2 .resources-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
   html.redesign-v2 .widget-grid {
     grid-template-columns: 1fr !important;

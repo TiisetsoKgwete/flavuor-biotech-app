@@ -7,10 +7,6 @@
         <p class="body-copy">
           We deploy practical biotech where food systems are under the most stress.
         </p>
-        <div class="pill-list">
-          <span class="pill">CRISPR-ready crops</span>
-          <span class="pill">AI crop intelligence</span>
-        </div>
         <div class="cta-row">
           <ion-button class="bio-solid" routerLink="/solutions">Explore Solutions</ion-button>
         </div>
@@ -19,19 +15,20 @@
         <span class="pull-label">Global hunger</span>
         <strong>811M</strong>
         <p>people go to bed hungry every night</p>
+        <div class="pull-stat-secondary">
+          <div class="pull-stat-row">
+            <strong>1.3B t</strong>
+            <span>food wasted annually</span>
+          </div>
+          <div class="pull-stat-row">
+            <strong>9.5B</strong>
+            <span>world population by 2050</span>
+          </div>
+        </div>
       </aside>
     </div>
   </section>
 
-  <section class="section-card">
-    <h2 class="section-title">The urgency in numbers</h2>
-    <p class="section-lead">A compact snapshot of why action is urgent.</p>
-    <div class="metric-grid top-metrics">
-      <article class="metric-tile"><strong>811M</strong><span>People hungry every night</span></article>
-      <article class="metric-tile"><strong>1.3B t</strong><span>Food wasted each year</span></article>
-      <article class="metric-tile"><strong>9.5B</strong><span>Population by 2050</span></article>
-    </div>
-  </section>
   <section class="section-card insight-stack">
     <div class="section-head-inline">
       <h2 class="section-title">From science to deployment</h2>
@@ -114,46 +111,20 @@
     </div>
   </section>
 
-  <section class="section-card live-widget-section">
-    <div class="section-head-inline">
-      <h2 class="section-title">Live food security widgets</h2>
-      <a href="https://hungermap.wfp.org" target="_blank" rel="noopener noreferrer">Open HungerMap</a>
+  <section class="section-card resources-row">
+    <div class="resources-layout">
+      <blockquote class="resources-quote">
+        <p>"Without action, 600 million people will still face hunger in 2030."</p>
+        <cite>FAO &mdash; The State of Food Security &amp; Nutrition in the World, 2023</cite>
+      </blockquote>
+      <nav class="resources-links" aria-label="Primary sources">
+        <h3>Primary sources</h3>
+        <ul>
+          <li><a href="https://hungermap.wfp.org" target="_blank" rel="noopener noreferrer">WFP HungerMap LIVE</a> &mdash; near real-time crisis monitoring</li>
+          <li><a href="https://ourworldindata.org/hunger-and-undernourishment" target="_blank" rel="noopener noreferrer">Our World in Data &mdash; Hunger</a> &mdash; longitudinal research and datasets</li>
+          <li><a href="https://www.fao.org/state-of-food-security-nutrition" target="_blank" rel="noopener noreferrer">FAO SOFI Report</a> &mdash; annual global food security index</li>
+        </ul>
+      </nav>
     </div>
-    <p class="section-lead">Interactive embeds people can view live directly on the site.</p>
-
-    <div class="widget-grid">
-      <article class="widget-wrap" [class.loaded]="widgetLoaded.hunger" role="region" aria-label="WFP HungerMap live widget">
-        <h3>WFP HungerMap LIVE</h3>
-        <p class="widget-subtitle">Near real-time food security and crisis risk data.</p>
-        <div class="widget-frame-shell">
-          <div class="widget-skeleton" aria-hidden="true"></div>
-        <iframe
-          class="widget-frame"
-          title="WFP HungerMap LIVE"
-          loading="lazy"
-          (load)="onWidgetLoad('hunger')"
-          src="https://hungermap.wfp.org/"
-        ></iframe>
-        </div>
-        <a class="widget-fallback" href="https://hungermap.wfp.org" target="_blank" rel="noopener noreferrer">Open in new tab</a>
-      </article>
-
-      <article class="widget-wrap" [class.loaded]="widgetLoaded.waste" role="region" aria-label="Food waste chart widget">
-        <h3>Food waste per capita</h3>
-        <p class="widget-subtitle">Latest published global food waste dataset.</p>
-        <div class="widget-frame-shell">
-          <div class="widget-skeleton" aria-hidden="true"></div>
-        <iframe
-          class="widget-frame"
-          title="Food waste per capita chart"
-          loading="lazy"
-          (load)="onWidgetLoad('waste')"
-          src="https://ourworldindata.org/grapher/food-waste-per-capita?tab=chart&time=latest"
-        ></iframe>
-        </div>
-        <a class="widget-fallback" href="https://ourworldindata.org/grapher/food-waste-per-capita?tab=chart&time=latest" target="_blank" rel="noopener noreferrer">Open in new tab</a>
-      </article>
-    </div>
-    <p class="widget-note">If an embed is blocked in your browser, use the source links above.</p>
   </section>
 </ion-content>
