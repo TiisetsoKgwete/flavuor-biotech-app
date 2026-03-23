@@ -22,6 +22,7 @@ export class AppComponent implements OnInit, OnDestroy {
   isDark = true;
   showScrollTop = false;
   isTabletNavOpen = false;
+  redesignPreview = false;
   private scrollCleanup: (() => void) | null = null;
   private routerSub?: Subscription;
   private readonly router = inject(Router);
@@ -30,10 +31,12 @@ export class AppComponent implements OnInit, OnDestroy {
     const saved = localStorage.getItem('bio-theme');
     this.isDark = saved !== 'light';
     this.applyTheme();
+    this.syncRedesignModeFromUrlOrStorage();
     this.bindScrollForActivePage();
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isTabletNavOpen = false;
+        this.syncRedesignModeFromUrlOrStorage();
         this.bindScrollForActivePage();
       }
     });
@@ -76,6 +79,28 @@ export class AppComponent implements OnInit, OnDestroy {
       body.classList.remove('dark-mode');
       body.classList.add('light-mode');
     }
+  }
+
+  private syncRedesignModeFromUrlOrStorage() {
+    const url = this.router.parseUrl(this.router.url);
+    const qp = url.queryParams ?? {};
+    const param = qp['v2'];
+
+    if (param === '1') {
+      localStorage.setItem('bio-redesign-v2', '1');
+    }
+
+    if (param === '0') {
+      localStorage.removeItem('bio-redesign-v2');
+    }
+
+    const enabled = localStorage.getItem('bio-redesign-v2') === '1';
+    this.redesignPreview = enabled;
+
+    const root = document.documentElement;
+    const body = document.body;
+    root.classList.toggle('redesign-v2', enabled);
+    body.classList.toggle('redesign-v2', enabled);
   }
 
   private bindScrollForActivePage() {

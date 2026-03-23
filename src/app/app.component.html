@@ -42,6 +42,8 @@
             <a [routerLink]="p.url" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: p.url === '/home' }">{{ p.title }}</a>
           }
         </nav>
+
+        <span class="preview-badge" *ngIf="redesignPreview">V2 Preview</span>
       </header>
 
       <nav class="tablet-links-drawer glass-panel" [class.open]="isTabletNavOpen" aria-label="Section links">
