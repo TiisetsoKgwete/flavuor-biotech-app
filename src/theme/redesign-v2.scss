@@ -1,250 +1,820 @@
-@import url('https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Work+Sans:wght@400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,700&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
-/* Scientific Editorial preview mode: enabled only with html/body.redesign-v2 */
+/* =============================================================
+   SCIENTIFIC EDITORIAL — V2 PREVIEW
+   Activated only when <html> has class .redesign-v2
+   ============================================================= */
 
-html.redesign-v2,
-body.redesign-v2 {
-  --bio-bg-0: #f4f4ef;
-  --bio-bg-1: #eceee8;
-  --bio-bg-2: #e3e8e0;
-  --bio-text: #1a2f24;
-  --bio-muted: #4f6c5f;
-  --bio-accent: #1f7a52;
-  --bio-accent-soft: #2f9b6d;
-  --bio-border: rgba(44, 93, 70, 0.18);
-  --bio-card-title: #163224;
-  --bio-card-body: #3f6352;
-  --bio-card-meta: #587666;
-  --bio-panel: linear-gradient(180deg, rgba(253, 254, 251, 0.93), rgba(247, 250, 244, 0.9));
-  --bio-card-shadow: 0 10px 28px rgba(28, 56, 44, 0.08);
+/* ── Design Tokens ── */
+html.redesign-v2 {
+  --v2-ink: #0c1a12;
+  --v2-ink-mid: #2e4838;
+  --v2-ink-soft: #516b5d;
+  --v2-ink-faint: #80998c;
+  --v2-paper: #f6f6f0;
+  --v2-paper-up: #fbfbf6;
+  --v2-paper-deep: #eceee8;
+  --v2-rule: rgba(60, 90, 75, 0.2);
+  --v2-rule-bold: rgba(60, 90, 75, 0.4);
+  --v2-accent: #186b44;
+  --v2-accent-dim: rgba(24, 107, 68, 0.12);
+  --v2-number: #0f5c38;
+  --v2-shadow: 0 1px 4px rgba(12, 26, 18, 0.07);
 }
 
+/* ── Global ── */
 html.redesign-v2 body {
-  color: var(--bio-text);
-  background:
-    radial-gradient(900px 500px at -6% 0%, rgba(43, 122, 83, 0.14), transparent 58%),
-    radial-gradient(900px 520px at 104% 6%, rgba(145, 178, 121, 0.15), transparent 56%),
-    linear-gradient(156deg, var(--bio-bg-0) 0%, var(--bio-bg-1) 55%, var(--bio-bg-2) 100%);
+  background: var(--v2-paper);
+  color: var(--v2-ink);
+  font-family: 'Work Sans', 'Segoe UI', sans-serif;
+  font-weight: 400;
 }
 
-html.redesign-v2,
-html.redesign-v2 body,
 html.redesign-v2 ion-app,
 html.redesign-v2 ion-content {
   font-family: 'Work Sans', 'Segoe UI', sans-serif;
+  --background: var(--v2-paper);
 }
 
-html.redesign-v2 .display-title,
-html.redesign-v2 .section-title,
-html.redesign-v2 .brand-copy strong,
-html.redesign-v2 .mission-callout .section-title {
-  font-family: 'Literata', Georgia, serif;
-  letter-spacing: -0.01em;
-  color: var(--bio-card-title);
-}
-
+/* ── App Chrome ── */
 html.redesign-v2 .main-frame {
-  max-width: 1220px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
 html.redesign-v2 .top-chrome {
-  background: rgba(249, 252, 246, 0.86);
-  border: 1px solid rgba(44, 93, 70, 0.18);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(26, 53, 41, 0.08);
+  background: var(--v2-paper-up);
+  border: 1px solid var(--v2-rule);
+  border-radius: 8px;
+  box-shadow: var(--v2-shadow);
 }
 
 html.redesign-v2 .global-filter-row,
 html.redesign-v2 .tablet-links-drawer {
-  background: rgba(248, 251, 245, 0.82);
-  border: 1px solid rgba(44, 93, 70, 0.16);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(26, 53, 41, 0.06);
+  background: var(--v2-paper-up);
+  border: 1px solid var(--v2-rule);
+  border-radius: 6px;
+  box-shadow: var(--v2-shadow);
 }
 
 html.redesign-v2 .top-links a,
 html.redesign-v2 .tablet-links-drawer a {
-  color: #2b5544;
+  color: var(--v2-ink-mid);
   font-weight: 500;
+  font-size: 0.86rem;
+  letter-spacing: 0.015em;
 }
 
 html.redesign-v2 .top-links a.active,
 html.redesign-v2 .tablet-links-drawer a.active {
-  color: #173726;
+  color: var(--v2-accent);
+  border-bottom-color: var(--v2-accent);
 }
 
+html.redesign-v2 .filter-chip {
+  background: var(--v2-accent-dim);
+  border-color: rgba(24, 107, 68, 0.25);
+  color: var(--v2-ink-mid);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ── Page Shell ── */
 html.redesign-v2 .page-shell {
-  gap: 24px;
-  padding: 2px 14px 34px;
+  gap: 0 !important;
+  padding: 0 0 48px !important;
+  max-width: 860px;
+  margin: 0 auto;
+  background: transparent;
 }
 
+/* ── Section Cards → flat editorial sections ── */
 html.redesign-v2 .section-card {
-  background: var(--bio-panel);
-  border: 1px solid var(--bio-border);
-  border-radius: 18px;
-  box-shadow: var(--bio-card-shadow);
-  padding: 26px;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 36px 20px !important;
+  border-bottom: 1px solid var(--v2-rule) !important;
 }
 
-html.redesign-v2 .title-kicker {
-  color: #2f7f58;
-  font-size: 0.74rem;
-  letter-spacing: 0.19em;
+html.redesign-v2 .section-card:last-child {
+  border-bottom: none !important;
 }
 
+/* ── Typography ── */
 html.redesign-v2 .display-title {
-  font-size: clamp(2.45rem, 5.1vw, 4.3rem);
-  line-height: 1;
+  font-family: 'Literata', Georgia, serif;
+  font-size: clamp(2.9rem, 7.5vw, 5.6rem) !important;
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--v2-ink);
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
 }
 
 html.redesign-v2 .section-title {
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
-  line-height: 1.08;
+  font-family: 'Literata', Georgia, serif;
+  font-size: clamp(1.55rem, 3.2vw, 2.15rem) !important;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--v2-ink);
+  letter-spacing: -0.018em;
+  margin-bottom: 8px;
+}
+
+html.redesign-v2 .title-kicker {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.7rem !important;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--v2-accent);
+  margin-bottom: 16px;
+  display: block;
 }
 
 html.redesign-v2 .body-copy,
-html.redesign-v2 .section-lead,
-html.redesign-v2 .insight-list span,
-html.redesign-v2 .proof-grid p,
-html.redesign-v2 .process-grid p,
-html.redesign-v2 .widget-subtitle,
-html.redesign-v2 .widget-note {
-  color: #4d6a5c;
-  line-height: 1.66;
+html.redesign-v2 .section-lead {
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: var(--v2-ink-soft) !important;
+  max-width: 60ch;
 }
 
+/* ── Hero ── */
 html.redesign-v2 .hero-card {
-  min-height: auto;
-  background:
-    linear-gradient(180deg, rgba(251, 254, 249, 0.95), rgba(243, 249, 241, 0.9)),
-    radial-gradient(700px 220px at 6% 0%, rgba(83, 158, 112, 0.2), transparent 70%);
-  border-left: 5px solid rgba(31, 122, 82, 0.7);
+  background: var(--v2-paper-up) !important;
+  border-left: none !important;
+  padding: 52px 20px 44px !important;
+  position: relative;
 }
 
+html.redesign-v2 .hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--v2-accent) 0%, rgba(24, 107, 68, 0.25) 70%, transparent 100%);
+}
+
+/* Hero editorial 2-col split */
+html.redesign-v2 .hero-editorial-wrap {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: start;
+}
+
+html.redesign-v2 .hero-copy {
+  min-width: 0;
+}
+
+html.redesign-v2 .hero-pull-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 16px 0 0 28px;
+  border-left: 1px solid var(--v2-rule-bold);
+  min-width: 160px;
+}
+
+html.redesign-v2 .hero-pull-stat .pull-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--v2-accent);
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+html.redesign-v2 .hero-pull-stat strong {
+  font-family: 'Literata', Georgia, serif;
+  font-size: clamp(3rem, 5vw, 4.6rem);
+  font-weight: 700;
+  color: var(--v2-number);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  display: block;
+  text-align: right;
+}
+
+html.redesign-v2 .hero-pull-stat p {
+  font-size: 0.78rem;
+  color: var(--v2-ink-faint);
+  line-height: 1.4;
+  text-align: right;
+  margin-top: 10px;
+  max-width: 140px;
+}
+
+/* ── Pills ── */
 html.redesign-v2 .pill-list {
-  gap: 6px;
+  gap: 6px !important;
+  flex-wrap: wrap;
+  margin: 18px 0;
 }
 
 html.redesign-v2 .pill {
-  background: rgba(222, 239, 229, 0.8);
-  color: #25523f;
-  border-color: rgba(38, 90, 67, 0.2);
-  font-size: 0.75rem;
+  background: transparent !important;
+  border: 1px solid rgba(24, 107, 68, 0.45) !important;
+  color: var(--v2-accent) !important;
+  border-radius: 3px !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  padding: 4px 10px !important;
+  text-transform: uppercase;
 }
 
-html.redesign-v2 .cta-row {
-  gap: 10px;
-}
-
+/* ── Buttons ── */
 html.redesign-v2 ion-button.bio-solid {
-  --background: linear-gradient(135deg, #2f8f63, #1f6d49);
-  --color: #f5fff9;
-  --border-radius: 10px;
+  --background: var(--v2-ink);
+  --color: #f3faf5;
+  --border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
 html.redesign-v2 ion-button.bio-ghost {
-  --border-color: rgba(33, 111, 75, 0.45);
-  --color: #2c634c;
-  --border-radius: 10px;
+  --border-color: var(--v2-rule-bold);
+  --color: var(--v2-ink-mid);
+  --border-radius: 4px;
 }
 
-html.redesign-v2 .metric-grid,
-html.redesign-v2 .insight-columns,
-html.redesign-v2 .proof-grid,
-html.redesign-v2 .widget-grid {
-  gap: 14px;
+/* ── Metric Grid ── */
+html.redesign-v2 .metric-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 !important;
+  margin-top: 24px;
+  border-top: 2px solid var(--v2-ink);
 }
 
-html.redesign-v2 .metric-tile,
-html.redesign-v2 .insight-block,
-html.redesign-v2 .proof-grid article,
-html.redesign-v2 .process-grid article,
-html.redesign-v2 .widget-wrap {
-  background: rgba(247, 251, 246, 0.84);
-  border: 1px solid rgba(44, 93, 70, 0.15);
-  border-radius: 14px;
+html.redesign-v2 .metric-tile {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-right: 1px solid var(--v2-rule);
+  padding: 20px 24px 20px 0 !important;
+  display: flex;
+  flex-direction: column;
 }
 
-html.redesign-v2 .metric-tile strong,
-html.redesign-v2 .proof-grid strong,
-html.redesign-v2 .process-grid h3,
-html.redesign-v2 .insight-list strong,
-html.redesign-v2 .widget-wrap h3 {
-  color: #163224;
+html.redesign-v2 .metric-tile:first-child {
+  padding-left: 0 !important;
 }
 
-html.redesign-v2 .section-head-inline a,
-html.redesign-v2 .widget-fallback {
-  color: #2a654b;
+html.redesign-v2 .metric-tile:last-child {
+  border-right: none;
 }
 
-html.redesign-v2 .section-head-inline a:hover,
-html.redesign-v2 .widget-fallback:hover {
-  color: #184832;
+html.redesign-v2 .metric-tile strong {
+  font-family: 'Literata', Georgia, serif !important;
+  font-size: clamp(2.8rem, 5.5vw, 4.2rem) !important;
+  font-weight: 700;
+  color: var(--v2-number) !important;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  display: block;
 }
 
+html.redesign-v2 .metric-tile span {
+  font-size: 0.8rem !important;
+  color: var(--v2-ink-faint) !important;
+  line-height: 1.4;
+  margin-top: 8px;
+}
+
+/* ── Values / Issues / Stack: numbered editorial columns ── */
+html.redesign-v2 .values-grid,
+html.redesign-v2 .issues-grid,
+html.redesign-v2 .stack-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 0 !important;
+  counter-reset: ed-item;
+  border-top: 2px solid var(--v2-ink);
+}
+
+html.redesign-v2 .values-grid article,
+html.redesign-v2 .issues-grid article,
+html.redesign-v2 .stack-grid article {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-right: 1px solid var(--v2-rule);
+  padding: 22px 16px 22px 0 !important;
+  counter-increment: ed-item;
+}
+
+html.redesign-v2 .values-grid article:first-child,
+html.redesign-v2 .issues-grid article:first-child,
+html.redesign-v2 .stack-grid article:first-child {
+  padding-left: 0 !important;
+}
+
+html.redesign-v2 .values-grid article:last-child,
+html.redesign-v2 .issues-grid article:last-child,
+html.redesign-v2 .stack-grid article:last-child {
+  border-right: none;
+}
+
+html.redesign-v2 .values-grid article::before,
+html.redesign-v2 .issues-grid article::before,
+html.redesign-v2 .stack-grid article::before {
+  content: counter(ed-item, decimal-leading-zero);
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--v2-accent);
+  margin-bottom: 12px;
+}
+
+html.redesign-v2 .values-grid article h3,
+html.redesign-v2 .issues-grid article h3,
+html.redesign-v2 .stack-grid article h3 {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--v2-ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+html.redesign-v2 .values-grid article p,
+html.redesign-v2 .issues-grid article p,
+html.redesign-v2 .stack-grid article p {
+  font-size: 0.88rem;
+  color: var(--v2-ink-soft);
+  line-height: 1.58;
+  margin: 0;
+}
+
+/* ── Flow Grid (Ecosystem) ── */
+html.redesign-v2 .flow-grid {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0;
+  border-top: 2px solid var(--v2-ink);
+}
+
+html.redesign-v2 .flow-grid article {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--v2-rule);
+  padding: 20px 0 !important;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: start;
+}
+
+html.redesign-v2 .flow-grid article > span {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--v2-accent);
+  line-height: 1;
+  border-right: 1px solid var(--v2-rule);
+  padding-right: 12px;
+}
+
+html.redesign-v2 .flow-grid article > div {
+  padding-left: 20px;
+}
+
+html.redesign-v2 .flow-grid article h3 {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--v2-ink);
+  margin-bottom: 4px;
+}
+
+html.redesign-v2 .flow-grid article p {
+  font-size: 0.88rem;
+  color: var(--v2-ink-soft);
+  line-height: 1.55;
+}
+
+/* ── Refs Grid (Research) ── */
+html.redesign-v2 .refs-grid {
+  display: grid !important;
+  gap: 0;
+  border-top: 2px solid var(--v2-ink);
+}
+html.redesign-v2 .refs-grid article {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--v2-rule);
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+}
+
+html.redesign-v2 .refs-grid article h3 {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--v2-ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  grid-column: 1;
+}
+
+html.redesign-v2 .refs-grid article p {
+  font-size: 0.88rem;
+  color: var(--v2-ink-soft);
+  line-height: 1.55;
+  grid-column: 1;
+}
+
+html.redesign-v2 .refs-grid article span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--v2-accent);
+  background: var(--v2-accent-dim);
+  border: 1px solid rgba(24, 107, 68, 0.24);
+  padding: 4px 9px;
+  border-radius: 3px;
+  white-space: nowrap;
+  align-self: start;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+/* ── Commitments (Impact) ── */
+html.redesign-v2 .commitments ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  border-top: 1px solid var(--v2-rule);
+}
+
+html.redesign-v2 .commitments ul li {
+  padding: 16px 0 16px 28px;
+  border-bottom: 1px solid var(--v2-rule);
+  font-size: 0.95rem;
+  color: var(--v2-ink-soft);
+  line-height: 1.55;
+  position: relative;
+}
+
+html.redesign-v2 .commitments ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--v2-accent);
+  font-weight: 700;
+}
+
+/* ── Mission Callout — dark inverted section ── */
 html.redesign-v2 .mission-callout {
-  background:
-    linear-gradient(180deg, rgba(241, 249, 241, 0.93), rgba(233, 244, 233, 0.9)),
-    radial-gradient(400px 180px at 50% 0%, rgba(77, 156, 113, 0.14), transparent 72%);
+  background: var(--v2-ink) !important;
+  border-bottom: none !important;
+  padding: 52px 20px !important;
+}
+
+html.redesign-v2 .mission-callout .section-title {
+  color: #edf7f1 !important;
+  font-size: clamp(2rem, 4.5vw, 3.2rem) !important;
+  max-width: 20ch;
+}
+
+html.redesign-v2 .mission-callout .body-copy {
+  color: rgba(210, 235, 220, 0.72) !important;
+  max-width: 52ch;
+  margin-bottom: 24px;
+}
+
+html.redesign-v2 .mission-callout ion-button.bio-solid {
+  --background: var(--v2-accent);
+  --color: #f5fff9;
+  --border-radius: 4px;
+}
+
+/* ── Insight Stack ── */
+html.redesign-v2 .insight-columns {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 40px !important;
+  margin-top: 24px;
+}
+
+html.redesign-v2 .insight-block {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-top: 3px solid var(--v2-accent);
+  padding: 16px 0 0 !important;
+}
+
+html.redesign-v2 .insight-block h3 {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--v2-ink);
+  margin-bottom: 14px;
+}
+
+html.redesign-v2 .insight-list li {
+  border-top: 1px solid var(--v2-rule);
+  padding: 12px 0;
+  list-style: none;
+}
+
+html.redesign-v2 .insight-list strong {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--v2-ink) !important;
+  margin-bottom: 3px;
+}
+
+html.redesign-v2 .insight-list span {
+  font-size: 0.82rem !important;
+  color: var(--v2-ink-soft) !important;
+  line-height: 1.5;
+}
+
+/* ── Outcomes Layout ── */
+html.redesign-v2 .outcomes-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+}
+
+html.redesign-v2 .proof-grid {
+  display: grid !important;
+  gap: 0 !important;
+  margin-top: 16px;
+  border-top: 2px solid var(--v2-ink);
+}
+
+html.redesign-v2 .proof-grid article {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--v2-rule);
+  padding: 18px 0;
+}
+
+html.redesign-v2 .proof-grid strong {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 2.4rem !important;
+  color: var(--v2-number) !important;
+  display: block;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+html.redesign-v2 .proof-grid p {
+  font-size: 0.86rem !important;
+  color: var(--v2-ink-soft) !important;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+html.redesign-v2 .process-grid {
+  display: grid !important;
+  gap: 0 !important;
+  margin-top: 16px;
+  border-top: 2px solid var(--v2-ink);
+}
+
+html.redesign-v2 .process-grid article {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--v2-rule);
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+html.redesign-v2 .process-grid article > span {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--v2-accent);
+  line-height: 1;
+}
+
+html.redesign-v2 .process-grid article h3 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--v2-ink);
+  margin-bottom: 4px;
+}
+
+html.redesign-v2 .process-grid article p {
+  font-size: 0.84rem !important;
+  color: var(--v2-ink-soft) !important;
+  line-height: 1.5;
+}
+
+/* ── Widgets ── */
+html.redesign-v2 .widget-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 20px !important;
+  margin-top: 16px;
+}
+
+html.redesign-v2 .widget-wrap {
+  background: var(--v2-paper-up) !important;
+  border: 1px solid var(--v2-rule) !important;
+  border-radius: 4px !important;
+  box-shadow: var(--v2-shadow) !important;
+  padding: 14px !important;
+}
+
+html.redesign-v2 .widget-wrap h3 {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--v2-ink) !important;
+  margin-bottom: 4px;
+}
+
+html.redesign-v2 .widget-subtitle,
+html.redesign-v2 .widget-note {
+  color: var(--v2-ink-faint) !important;
+  font-size: 0.8rem !important;
 }
 
 html.redesign-v2 .widget-frame {
-  border: 1px solid rgba(44, 93, 70, 0.16);
+  border: 1px solid var(--v2-rule) !important;
 }
 
+html.redesign-v2 .widget-fallback {
+  color: var(--v2-accent) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600;
+}
+
+/* ── Section inline link ── */
+html.redesign-v2 .section-head-inline a {
+  color: var(--v2-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+html.redesign-v2 .section-head-inline a:hover {
+  text-decoration: underline;
+  color: var(--v2-ink);
+}
+
+/* ── Note Card (Research) ── */
+html.redesign-v2 .note-card {
+  background: var(--v2-accent-dim) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-left: 4px solid var(--v2-accent) !important;
+  padding: 24px 20px !important;
+}
+
+html.redesign-v2 .note-card .section-title {
+  font-size: 1.15rem !important;
+}
+
+/* ── Form (Contact) ── */
+html.redesign-v2 .form-wrap {
+  display: grid;
+  gap: 0;
+}
+
+html.redesign-v2 .form-wrap label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+  border-top: 1px solid var(--v2-rule);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--v2-ink-mid);
+}
+
+html.redesign-v2 .form-wrap input,
+html.redesign-v2 .form-wrap select,
+html.redesign-v2 .form-wrap textarea {
+  background: var(--v2-paper-up);
+  border: 1px solid var(--v2-rule);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.98rem;
+  color: var(--v2-ink);
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+html.redesign-v2 .form-wrap input:focus,
+html.redesign-v2 .form-wrap select:focus,
+html.redesign-v2 .form-wrap textarea:focus {
+  border-color: var(--v2-accent);
+}
+
+html.redesign-v2 .form-wrap .cta-row {
+  padding: 24px 0;
+  border-top: 1px solid var(--v2-rule);
+}
+
+/* ── Preview Badge ── */
 html.redesign-v2 .preview-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-left: 10px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(31, 122, 82, 0.45);
-  background: rgba(239, 249, 240, 0.9);
-  color: #1f6545;
-  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(24, 107, 68, 0.4);
+  background: var(--v2-accent-dim);
+  color: var(--v2-accent);
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-@media (max-width: 980px) {
-  html.redesign-v2 .main-frame {
-    max-width: 100%;
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  html.redesign-v2 .hero-editorial-wrap {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
-
-  html.redesign-v2 .page-shell {
-    gap: 16px;
-    padding: 0 10px 26px;
+  html.redesign-v2 .hero-pull-stat {
+    display: none;
   }
-
-  html.redesign-v2 .section-card {
-    padding: 20px;
+  html.redesign-v2 .insight-columns {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  html.redesign-v2 .outcomes-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  html.redesign-v2 .values-grid,
+  html.redesign-v2 .issues-grid,
+  html.redesign-v2 .stack-grid {
+    grid-template-columns: 1fr 1fr !important;
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 640px) {
   html.redesign-v2 .page-shell {
-    padding: 0 8px 18px;
+    padding: 0 0 32px !important;
   }
-
   html.redesign-v2 .section-card {
-    padding: 14px;
-    border-radius: 12px;
+    padding: 28px 16px !important;
   }
-
+  html.redesign-v2 .hero-card {
+    padding: 36px 16px 30px !important;
+  }
+  html.redesign-v2 .metric-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  html.redesign-v2 .values-grid,
+  html.redesign-v2 .issues-grid,
+  html.redesign-v2 .stack-grid {
+    grid-template-columns: 1fr !important;
+  }
+  html.redesign-v2 .widget-grid {
+    grid-template-columns: 1fr !important;
+  }
+  html.redesign-v2 .refs-grid article {
+    grid-template-columns: 1fr;
+  }
+  html.redesign-v2 .refs-grid article span {
+    grid-row: auto;
+    grid-column: 1;
+    justify-self: start;
+    margin-bottom: 8px;
+  }
   html.redesign-v2 .display-title {
-    font-size: clamp(1.95rem, 8.2vw, 2.7rem);
-  }
-
-  html.redesign-v2 .section-title {
-    font-size: clamp(1.35rem, 6vw, 1.8rem);
-  }
-
-  html.redesign-v2 .preview-badge {
-    margin-left: 0;
-    margin-top: 8px;
+    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
   }
 }
