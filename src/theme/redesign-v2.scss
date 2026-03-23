@@ -388,6 +388,30 @@ html.redesign-v2.dark-mode ::placeholder {
   color: var(--v2-ink-faint) !important;
 }
 
+html.redesign-v2.dark-mode .home-page .section-lead,
+html.redesign-v2.dark-mode .home-page .section-head-inline a,
+html.redesign-v2.dark-mode .home-page .widget-fallback,
+html.redesign-v2.dark-mode .home-page .widget-note,
+html.redesign-v2.dark-mode .home-page .widget-subtitle,
+html.redesign-v2.dark-mode .home-page .proof-grid p,
+html.redesign-v2.dark-mode .home-page .process-grid p,
+html.redesign-v2.dark-mode .home-page .insight-list span {
+  color: var(--v2-ink-soft) !important;
+}
+
+html.redesign-v2.dark-mode .home-page .insight-block h3,
+html.redesign-v2.dark-mode .home-page .insight-list strong,
+html.redesign-v2.dark-mode .home-page .proof-grid strong,
+html.redesign-v2.dark-mode .home-page .process-grid h3,
+html.redesign-v2.dark-mode .home-page .widget-wrap h3 {
+  color: var(--v2-ink) !important;
+}
+
+html.redesign-v2.dark-mode .home-page .process-grid span {
+  background: rgba(123, 215, 159, 0.16) !important;
+  color: var(--v2-ink) !important;
+}
+
 html.redesign-v2.dark-mode .widget-fallback,
 html.redesign-v2.dark-mode .section-head-inline a,
 html.redesign-v2.dark-mode .top-links a.active,
